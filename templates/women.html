@@ -1,0 +1,1954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devox - New Arrivals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="shortcut icon" href="/static/image/wingshoe.png">
+    
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            
+        }
+        
+/*loading bar */
+.loading-bar {
+    width: 0;
+    height: 85px;
+    background: #594169;
+    animation: loading 2s linear forwards;
+}
+
+@keyframes loading {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+        /*navbar*/
+        section nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+            background: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+        section nav .logo {
+            font-size: 35px;
+            color: white;
+            margin-top: 10px;
+            cursor: pointer;
+            position: relative;
+            left: 4%;
+            margin-left: -50px;
+        }
+
+        section nav .logo:hover {
+            color: #594169;
+            color: linear-gradient(90deg, #594169 0%, #594169 35%, #594169 100%);
+        }
+
+        section nav .logo a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section nav .logo span {
+            color: #030105;
+            text-decoration: none;
+            /* Remove underline from the logo text */
+        }
+
+        section nav ul {
+            list-style: none;
+        }
+
+        section nav ul li {
+            display: inline-block;
+            margin: 5px 15px;
+        }
+
+        section nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: 0.2s;
+            font-weight: bold;
+            /* Set the link text to bold */
+        }
+
+        section nav ul li a:hover {
+            color: #594169;
+            font-weight: bolder;
+        }
+
+        section nav .icons i {
+            margin: 0 4px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        section nav .icons i:hover {
+            color: #594169;
+            font-weight: bolder;
+        }
+   
+        /*Social Links */
+        .social_link {
+    display: flex;
+  }
+
+  /* Styling for social accounts links */
+  .social-link-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+            margin-left: 391px;
+        }
+
+        .social-link-container a {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+            margin: 0 5px;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        .social-link-container a .fa-brands {
+            font-size: 15px;
+            line-height: 30px;
+            z-index: 10;
+            position: relative;
+            transition: 0.5s;
+            color: white;
+          
+        }
+
+        .social-link-container a:hover i {
+            color: white;
+        }
+
+        .social-link-container a::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+
+            left: -90px;
+            background: #594169;
+            position: absolute;
+            z-index: -10;
+            transition: 0.5s;
+        }
+
+        .social-link-container a:hover::after {
+            left: 0;
+        }
+
+
+
+        /*products*/
+
+        .products {
+    width: 100%;
+    height: 380px; /* Updated height for better card display */
+    padding: 25px 0;
+ display: flex; 
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+ /*   margin-left: 7%; */
+    
+}
+
+
+.products .box .card .products_text p {
+        margin-top: 5px;
+    }
+
+    .products .box .card .products_text .product_name {
+        margin-top: 10px;
+    }
+.products h1 {
+    font-size: 45px;
+    margin-top: 20px; /* Slightly reduced the margin for better alignment */
+}
+
+.products .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px; /* Adjusted the margin-top for better spacing */
+    
+}
+
+.products .box .card {
+    width: 220px;
+    height: 380px;
+    padding: 8px 15px;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -1px; /* Increased margin-bottom for better spacing between cards */
+   box-shadow: 0 0 10px #594169;
+    border: 2px solid #594169;
+   
+}
+
+
+.products .box .card .image img {
+    width: 150px;
+    margin: 10px 0; /* Adjusted margin for image position */
+    transition: 0.3s;
+}
+
+.products .box .card:hover .image img {
+    transform: scale(1.1);
+}
+
+.products .box .card .products_text h2 {
+    font-size: 30px;
+    margin-top: 10px; /* Adjusted the margin for heading position */
+    text-align: center;
+}
+
+.products .box .card .products_text .buy_now {
+        margin-top: 10px;
+    }
+
+    .products .box .card .products_text .btn {
+        text-decoration: none;
+        padding: 10px 20px;
+        background: #594169;
+        color: white;
+        margin-top: 5px;
+        align-self: center;
+        cursor: pointer;
+    }
+
+    .products .box .card .products_text .btn:hover {
+        background: #594169;
+        background: linear-gradient(90deg, #594169 0%, rgb(158, 64, 109) 35%, #594169 100%);
+    }
+    .products .box .card .products_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.products .box .card .products_text h2 {
+    font-size: 15px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.products .box .card .products_text .btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    background: #594169;
+    color: white;
+    margin-top: 5px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.products .box .card .products_text .btn:hover {
+    background: #594169;
+    background: linear-gradient(90deg, #594169 0%, rgb(190, 56, 182) 35%, #594169 100%);
+}
+
+.products .box .card .products_text p {
+    margin-top: 5px;
+}
+
+/* Adjusting the margin between button and price */
+.products .box .card .products_text .btn {
+    margin-bottom: 10px;
+}
+
+
+.pr7{
+    margin-top: 80px;
+}
+
+
+
+/*per product css */
+#product52 img{
+            margin-top: 100px;
+        }
+
+
+
+        /* Styling for "X" in "DEVOX" */
+        #X {
+            font-weight: bolder;
+            font-size: 50px;
+            /* Increase the font size to your desired value */
+            color: #594169;
+            text-decoration: none;
+            /* Remove underline from "X" */
+        }
+        
+
+     /*poster styling*/
+.poster {
+    margin-top: 80px;
+    text-align: center;
+    position: relative;
+}
+
+.poster img {
+    width: 1000px;
+    border: 2px #594169 solid;
+    margin-top: 74px;
+    box-shadow: 8px 8px 15px #594169;
+}
+
+.icon-row {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adjust the gap as needed */
+    margin-top: 200px;
+    margin-right: 70px;
+}
+
+.icon-link {
+    color: white;
+    font-size: 16px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+.icon-link:hover {
+    color: #594169;
+}
+
+/* Adjusted the phone icon size */
+.icon-link i.fas.fa-phone {
+    font-size: 15px;
+}
+
+/**/
+        .btn {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
+        /*products row 2 jordan*/
+       
+               /* Form styles */
+               #productSelection {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 800px;
+            height: 560px;
+            position: fixed;
+            top: -34%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 999;
+            margin-top: 488px;
+            overflow: visible; /* Add scrollbar when content overflows */
+    max-height: 100vh; 
+    padding-bottom: 20px; /* Add some bottom padding for space */
+
+    /* Custom scrollbar styles */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: transparent transparent; /* For Firefox */
+        
+        }
+
+        /* Webkit (Chrome, Safari) scrollbar styles */
+#productSelection::-webkit-scrollbar {
+    width: 6px; /* Width of the scrollbar */
+}
+
+#productSelection::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Color of the thumb (scrollable area) */
+}
+
+#productSelection::-webkit-scrollbar-track {
+    background-color: transparent; /* Color of the track (non-scrollable area) */
+}
+
+        #productSelection h2 {
+            font-size: 24px;
+            margin-bottom: -3px;
+            margin-top: -11px;
+            display: flex;
+        }
+
+        #productSelection form {
+            display: flex;
+            flex-direction: column;
+        
+        }
+
+        #productSelection label {
+            margin-top: -8px;
+            font-size: 13px;
+            display: flex;
+            
+        }
+        #productSelection input{
+            background-color: black;
+        }
+        #productSelection #additionalDetails {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    width: 100%; /* Take full width */
+    height: 42px; /* Adjust the height as needed */
+    resize: vertical; /* Allow vertical resizing */
+    margin-top: 2px;
+}
+
+        #productSelection input,
+        #productSelection button {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #productSelection input[type="number"] {
+            width: 50px;
+            color:white;
+        }
+
+        #productSelection button {
+            background-color: #594169;
+            color: white;
+            cursor: pointer;
+            margin-top: -5px;
+        }
+
+        #productSelection button:hover {
+            background-color: #594169;
+        }
+
+
+
+#productSelection .product_info img {
+    width: 50px;
+    margin-right: 20px;
+}
+
+
+        #productSelection .quantity {
+         /*   display: flex; */
+            align-items: center;
+            margin-top: -5px;
+            margin-left: 100px;
+        }
+
+        #productSelection .quantity button {
+            padding: 5px 10px;
+            margin: 0 5px;
+            background-color: #594169;
+            color: white;
+            cursor: pointer;
+            border: none;
+            border-radius: 3px;
+        }
+
+        #productSelection .quantity button:hover {
+            background-color: #594169;
+        }
+
+        #productSelection .confirmation {
+            background-color: #0f6c0f;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: -15px;
+            display: none;
+        }
+
+        #productSelection .confirmation .tick {
+            font-size: 24px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        .order-form-container{
+            margin-top: 10px;
+        }
+        /* New styles for form */
+#productSelection .product_info {
+    display: flex;
+    align-items: center;
+    margin-top: -5px;
+}
+
+#productSelection .product_info img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+#productSelection .quantity {
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 100px;
+}
+.discount{
+    display: flex;
+}
+
+#moreImagesLink{
+    display: flex;
+}
+/*inputs*/
+#productSelection .product_info h3{
+    margin-top: -10px;
+}
+#productSelection label.cstmname{
+    margin-top: 3px;
+}
+#productSelection #customerName{
+    margin-top: 3px;
+}
+#productSelection label.usrcity{
+    margin-top: 3px;
+}
+#productSelection #userCity{
+    margin-top: 4px;
+}
+
+#productSelection label.detail{
+    margin-top: 4px;
+}
+#productSelection label.address{
+    margin-top: -16px;
+}
+#productSelection #userAddress {
+    margin-top: 3px;
+}
+#productSelection label.contactno{
+    margin-top: 2px;
+}
+
+#productSelection #userContact {
+    margin-top: 3px;
+}
+
+#productSelection label.email{
+    margin-top: -17px;
+}
+#productSelection #userEmail {
+    margin-top: 3px;
+}
+#price{
+    display: flex;
+}
+#selectedCuttedPrice{
+    margin-left: 4px;
+}
+
+#mi{
+    text-decoration: none;
+    color: white;
+}
+#mi:hover{
+    color: #594169;
+}
+
+/*Products rows upto 1 */
+.pr2{
+    margin-top: 255px;
+}
+.pr3{
+    margin-top:-1px;
+}
+.pr6{
+    margin-top:255px;
+}
+.pr7{
+    margin-top: 345px;
+}
+.pr8{
+    margin-top: -66px;
+}
+.pr9{
+    margin-top: 100px;
+}
+
+/*sidebar styling*/
+.menu-icon {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 500px;
+}
+
+
+
+.sidebar {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: #222;
+  transition: left 0.3s ease;
+  z-index: 999999;
+  overflow-y: auto; /* Add vertical scroll */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 0; /* Hide scrollbar for Chrome and Safari */
+}
+
+.close-icon {
+  font-size: 10px;
+  color: white;
+  cursor: pointer;
+  text-align: right;
+  padding: 10px;
+}
+.close-icon:hover{
+    color:#594169;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar ul hr {
+  border-color: #888; /* Set the border color for <hr> tags */
+}
+
+.sidebar ul li.categories {
+    font-weight: bold;
+    padding: 10px;
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: #444; /* Add a background color for the heading */
+    border-top: 1px solid #594169; /* Add a top border */
+    border-bottom: 1px solid #594169; /* Add a bottom border */
+    margin: 0;
+}
+.sidebar ul li a:hover{
+  color: #b7b4b4;
+ 
+}
+
+
+.sidebar .parent-category .arrow {
+  font-size: 12px;
+  margin-left: 5px;
+ /* color: #a31717; /* Set arrow color */
+  transition: transform 0.3s ease, color 0.3s ease; /* Added color transition */
+}
+.sidebar .parent-category:hover .arrow {
+  transform: rotate(90deg);
+  color: #594169; /* Set arrow color on hover */
+}
+.sidebar .sub-categories {
+  display: none;
+  margin-left: 15px;
+  padding: 0;
+}
+.sidebar .parent-category:hover .sub-categories {
+  display: block;
+}
+
+.sidebar .sub-categories a:hover {
+  color: #594169; /* Change color on hover */
+}
+
+
+
+#women{
+    margin-top: 100px;
+}
+/*footer*/
+footer {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 1587px;
+    }
+    .red-line {
+      border-top: 2px solid #594169;
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+
+
+
+
+
+
+            /*media queries */
+    @media (max-width: 600px){
+        html{
+            overflow-x: hidden;
+        }
+   body{
+    font-size: 10px;
+    overflow-x: hidden;
+    
+   }
+   section nav .logo{
+    margin-left: 94px;
+    font-size: 20px;
+    width: 100vw;
+   }
+   section nav .logo #X{
+    
+    font-size: 30px;
+   }
+   #product25{
+    display: none;
+   }
+   .loading-bar{
+    height: 63px;
+    
+ 
+   }
+   @keyframes loading {
+    from{
+        width: 0px;
+    }
+    to{
+        width: 130%;
+    }
+    
+   }
+   .social-link-container{
+    margin-left: 0px;
+    width: 1000vw;
+   }
+   .menu-icon{
+    margin-left: -5px;
+    width: 100vw;
+    margin-top: 7px;
+   }
+   section nav{
+    margin-left: -100px;
+   }
+   
+
+   .quantity-size-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: center; /* Center the items horizontally */
+}
+
+
+
+   .poster {
+    margin-top: 80px;
+    text-align: center;
+    position: relative;
+    margin-left: -13px;
+}
+
+.poster img {
+    width: 315px;
+    border: 2px #594169 solid;
+    margin-top: 74px;
+    box-shadow: 4px 2px 15px #594169;
+}
+.icon-row {
+            margin-top: 66px;
+            left: 90.5%;
+          }
+          .icon-link{
+            font-size: 10px;
+    margin-top: 24px;
+            
+          }
+          .icon-link i.fas.fa-phone {
+    font-size: 10px;
+}
+
+        /*products*/
+        .products{
+            margin-left: -6px;
+        }
+        .products .box {
+        flex-direction: column; /* Change to column layout for smaller screens */
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    .products .box .card {
+        width: 176px; /* 10px = 2 * margin between cards */
+        margin: -1px; /* Adjust margin for spacing between cards */
+        height: 350px;
+    }
+
+    .products .box {
+        display: grid; /* Use grid layout for smaller screens */
+        grid-template-columns: 1fr 1fr; /* Two columns in each row */
+        grid-gap: -20px; /* Gap between columns and rows */
+        
+    }
+   
+    
+    .products_text{
+        margin-top: -10px;
+        font-size: 8px;
+    }
+    .products .image{
+        margin-top: 10px;
+    }
+
+  
+
+  footer{
+    margin-top: 1072%;
+  }
+
+  /*form*/
+
+  #productSelection{
+    width: 317px;
+    margin-top: 573px;
+    height: 580px;
+    font-size: 12px;
+  }
+  #productSelection label {
+            
+            font-size: 11px;
+            margin-left: 4px;
+            
+        }
+        #productSelection label.address{
+    margin-top: -9px;
+}
+#productSelection #userAddress {
+    margin-top: 3px;
+}
+ 
+
+#productSelection .product_info h3{
+    margin-top: -12px;
+    
+}
+#productSelection #selectedProduct{
+    font-size: 20px;
+    font-weight: bolder;
+}
+#productSelection .product_info{
+    width: 148vw;
+    font-size: 12px;
+   
+    
+}
+
+
+#productSelection label.contactno{
+    margin-top: 4px;
+}
+
+
+
+#productSelection label.email{
+    margin-top: -10px;
+}
+
+#productSelection .quantity{
+    font-size: 10px;
+    width: 100vw;
+}
+ 
+
+#productSelection .quantity {
+         /*   display: flex; */
+            align-items: center;
+            margin-top: -5px;
+            margin-left: 10px;
+        }
+
+        #productSelection .quantity button {
+           
+            padding: 2px 7px;
+            margin: 0 3px;
+            background-color: #594169;
+            color: white;
+            cursor: pointer;
+            border: none;
+            border-radius: 3px;
+            
+        }
+
+        .quantity-size-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 10px;
+        margin-left: 0;
+        margin-top: 18px;
+    
+    }
+    #productSelection #size{
+        margin-left: 10px;
+        margin-top: 0px;
+    }
+    #productSelection .confirmation {
+            background-color: #0f6c0f;
+            color: white;
+            padding: 1px;
+            text-align: center;
+            margin-top: -9px;
+            display: none;
+        }
+    
+      
+ 
+}
+
+/*widescreen*/
+@media (max-width: 1370px) and (min-width: 1300px) {
+    #productSelection {
+        margin-top: 550px;
+    }
+}
+
+/*iphoneX*/
+
+@media (width: 375px) and (height: 812px) {
+    #productSelection {
+        margin-top: 695px;
+    }
+    .products .box .card {
+        width: 185px; 
+    }
+footer{
+    margin-top: 1043%;
+    height: 23vh;
+}
+}
+@media (max-width: 1019px) and (min-width: 801px){
+    #productSelection{
+        margin-top: 500px;
+    }
+}
+/*Ipad*/
+
+@media (max-width: 800px) and (min-width: 601px){
+    section nav .logo{
+        margin-left: 5px;
+    }
+    html{
+        overflow-x: hidden;
+    }
+    body{
+        overflow-x: hidden;
+    }
+
+    #productSelection {
+        margin-top: 700px;
+        width: 90vw;
+        
+    }
+    
+    #product25{
+        display: none;
+    }
+    footer{
+        margin-top: 265%;
+    height: 40vh;
+    }
+    #productSelection .quantity{
+        width: 100vw;
+    }
+    #productSelection .product_info{
+    width: 200vw;
+    font-size: 12px;
+   
+    
+}
+   .social-link-container{
+    margin-left: 220px;
+    width: 1000vw;
+   }
+   .menu-icon{
+    width: 1000vw;
+    margin-left: 209px;
+
+   }
+   .poster img{
+    width: 680px;
+    margin-left: -10px;
+   }
+
+   .products .box {
+    display: grid; /* Use grid layout for smaller screens */
+    grid-template-columns: repeat(4, 1fr); /* Four columns in each row */
+    grid-gap: 0px; /* Gap between columns and rows */
+    align-items: center;
+    margin-left: 10px;
+}
+
+.products .box .card {
+    width: 189px; /* Calculate width for 4 columns with gap */
+    height: 380px;
+    margin: 0; /* Reset margin */
+}
+
+
+.icon-row{
+    left: 95%;
+}
+
+
+
+}
+
+/*ipad pro*/
+@media (max-width:1100px) and (min-width: 1020px){
+    body{
+        height: 261vh;
+    }
+    .poster img{
+        width: 900px;
+    }
+    .icon-row{
+        left: 96%;
+    }
+    #productSelection{
+        margin-top: 800px;
+        margin-left: 1px;
+    }
+    section nav .logo{
+        margin-left: -20px;
+    }
+    .social-link-container{
+        margin-left: 364px;
+    }
+   .menu-icon{
+    margin-left: 350px;
+   }
+.products .box{
+    
+    display: grid; /* Use grid layout for smaller screens */
+    grid-template-columns: repeat(5, 1fr);
+    width: 80vw;
+    margin-left: -112px;
+
+}
+#women{
+    width: 1px;
+}
+.products{
+    margin-left: 55%;
+}
+.products .box .card {
+       width: 200px;
+    }
+}
+
+/*pixel 2 xl*/
+@media(width:411px){
+    #productSelection{
+        margin-top: 705px;
+    }
+    .products .box .card {
+        width: 205px; 
+    }
+    footer{
+        margin-top: 960%;
+    height: 25vh;
+    }
+}
+@media(width:320px){
+   #productSelection{
+    margin-top: 490px;
+   }
+}
+
+.products {
+        display: grid;
+        grid-template-columns: repeat(1, 5fr);
+        gap: 0px;
+    }
+    /*iphone 6 / 7 */
+    @media (width:375px){
+        .products .box .card{
+            width: 185px;
+        }    
+    }
+    @media (width:414px){
+        .products .box .card{
+            width: 203px;
+        }
+        #productSelection{
+            margin-top: 628px;
+        }
+        footer{
+            margin-top: 955%;
+    height: 32vh;
+        }
+    }
+    </style>
+</head>
+
+<body>
+ 
+    <div class="loading-bar"></div>
+    <div class="poster">
+        <div class="icon-row">
+            <a href="home.html" class="icon-link" title="Home"><i class="fas fa-home"></i></a>
+            <a href="home.html#Contact" class="icon-link" title="Contact"><i class="fas fa-phone"></i></a>
+            <a href="https://wa.me/923234341354" class="icon-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <img src="/static/image/posters/womenpost.jpg">
+    </div>
+    
+
+
+    <!--navbar-->
+    <section>
+        <nav>
+            <div class="logo">
+                <h1><a href="home.html">DEVO<span id="X">X</span></a></h1>
+            </div>
+
+            <!--social-->
+            <div class="social-link-container">
+                <a href="https://m.facebook.com/Devox.pk" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@devox.pk?_r=1&_d=di09fb035be51c&sec_uid=MS4wLjABAAAAOYCyp9AvwTBWs_qhLqr5oGlAXS31ZoOR7bqNLmnEoBnrYZ-CVCdY6l1ifTqFDmvY&share_author_id=7242328167497958405&sharer_language=en&source=h5_m&u_code=dimdi70igklka5&timestamp=1693423936&user_id=6968469275968619521&sec_user_id=MS4wLjABAAAAb9DzaF4Hq42gVXlTQ4YdwFfIE_CpusiwqGAWAkImDh0jb5IWTvcXgC0RIhVEruvg&utm_source=whatsapp&utm_campaign=client_share&utm_medium=android&share_iid=7269976009058699013&share_link_id=49e26760-2827-4752-acb4-54d471350fe8&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b6880%2Cb5836&social_share_type=5" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://instagram.com/devox.pk?igshid=MzRlODBiNWFlZA==" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            
+  <!-- Sidebar -->
+  <div class="menu-icon">
+    <div class="bar">☰</div>
+   
+  </div>
+
+ 
+
+</nav>
+<div class="sidebar">
+    <div class="close-icon" onclick="closeIcon()">✕</div>
+    <ul>
+        <li class="categories">Categories</li>
+        
+        <li><a href="#women">NIKE WALK</a></li><hr>
+        <li><a href="#product7">ARB</a></li><hr>
+        <li><a href="#product9">WALK®</a></li><hr>
+        <li><a href="#product12">FASHION WALK</a></li><hr>
+        <li><a href="#product18">333</a></li><hr>
+        <li><a href="#product15">ATR</a></li><hr>
+        <li><a href="#product20">FSH BEAUTIFUL</a></li><hr>
+        <li><a href="#product24">FSH BING</a></li><hr>
+        
+      
+      
+    </ul>
+</div>
+
+</section>
+
+ <!--Women-->
+<!-- Women row 1-->
+<div class="products" id="women">
+
+    <div class="box">
+        <!--product 1 -->
+        <div class="card" id="product1">
+            <div class="image">
+                <img src="/static/image/women/w1.png" alt="NIKE WALK Black-Blue">
+            </div>
+            <div class="products_text">
+                <h2>NIKE WALK Black-Blue</h2>
+                <p>Price: Rs. <span class="productPrice">2500</span> <del>Rs. 4200</del> (40% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE WALK Black-Blue', 2500 , 'https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODUwNjAzNzA1MDE3MDY0?story_media_id=3170825420081131155_57523216083&igshid=ZjA4NGQ2NTI1Ng==' , 4200, 'product1')">BUY NOW</a>
+            </div>
+        </div>
+        <!--Product 2 -->
+        <div class="card" id="product2">
+            <div class="image">
+                <img src="/static/image/women/w2.png" alt="NIKE WALK Blue-orange">
+            </div>
+            <div class="products_text" id="product50">
+                <h2>NIKE WALK Blue-orange</h2>
+                <p>Price: Rs. <span class="productPrice">2500</span> <del>Rs. 4200</del> (40% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE WALK Blue-orange', 2500 , 'https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODUwNjAzNzA1MDE3MDY0?story_media_id=3170826213181893177_57523216083&igshid=ZjA4NGQ2NTI1Ng==' ,4200, 'product2')">BUY NOW</a>
+            </div>
+        </div>
+ 
+
+        <!--product 3 -->
+        <div class="card" id="product3">
+            <div class="image">
+                <img src="/static/image/women/w3.png" alt="NIKE WALK Pink-Blue">
+            </div>
+            <div class="products_text">
+                <h2>NIKE WALK Pink-Blue</h2>
+                <p>Price: Rs. <span class="productPrice">2500</span> <del>Rs. 4200</del> (40% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE WALK Pink-Blue', 2500 , 'https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODUwNjAzNzA1MDE3MDY0?story_media_id=3170826435849223648_57523216083&igshid=ZjA4NGQ2NTI1Ng==' ,4200, 'product3')">BUY NOW</a>
+            </div>
+        </div>
+        <!--product 4-->
+        <div class="card" id="product4">
+            <div class="image">
+                <img src="/static/image/women/w4.png" alt="NIKE WALK Green-Grey">
+            </div>
+            <div class="products_text">
+                <h2>NIKE WALK Green-Grey</h2>
+                <p>Price: Rs. <span class="productPrice">2500</span> <del>Rs. 4200</del> (40% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE WALK Green-Grey', 2500 , 'https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODUwNjAzNzA1MDE3MDY0?story_media_id=3170825847153620458_57523216083&igshid=ZjA4NGQ2NTI1Ng==' , 4200, 'product4')">BUY NOW</a>
+            </div>
+        </div>
+          <!--product 5-->
+          <div class="card" id="product5">
+            <div class="image">
+                <img src="/static/image/women/w5.png" alt="ARB Black">
+            </div>
+            <div class="products_text">
+                <h2>ARB Black</h2>
+                <p>Price: Rs. <span class="productPrice">2500</span> <del>Rs. 4000</del> (38% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('ARB Black', 2500 , 'https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODUwNjAzNzA1MDE3MDY0?story_media_id=3170827995090185157_57523216083&igshid=ZjA4NGQ2NTI1Ng==' , 4000, 'product5')">BUY NOW</a>
+            </div>
+        </div>
+  
+
+
+<!--Women row 2 -->
+
+            <!--product 6 -->
+            <div class="card" id="product6">
+                <div class="image">
+                    <img src="/static/image/women/w6.png" alt="ARB Pink">
+                </div>
+                <div class="products_text">
+                    <h2>ARB Pink</h2>
+                    <p>Price: Rs. <span class="productPrice">2500</span> <del>Rs.4000</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('ARB Pink', 2500 ,'https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODUwNjAzNzA1MDE3MDY0?story_media_id=3170827614188497087_57523216083&igshid=ZjA4NGQ2NTI1Ng==' ,4000, 'product6')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 7-->
+            <div class="card" id="product7">
+                <div class="image">
+                    <img src="/static/image/women/w7.png" alt="ARB White">
+                </div>
+                <div class="products_text">
+                    <h2>ARB White</h2>
+                    <p>Price: Rs. <span class="productPrice">2500</span> <del>Rs. 4000</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('ARB White', 2500 , 'https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODUwNjAzNzA1MDE3MDY0?story_media_id=3170827471557141164_57523216083&igshid=ZjA4NGQ2NTI1Ng==' ,4000, 'product7')">BUY NOW</a>
+                </div>
+
+            </div>
+            <!--product 8-->
+            <div class="card" id="product8">
+                <div class="image">
+                    <img src="/static/image/women/w8.png" alt="WALK Gold">
+                </div>
+                <div class="products_text" id="product2">
+                    <h2>WALK Gold</h2>
+                    <p>Price: Rs. <span class="productPrice">2500</span> <del>Rs. 4000</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('WALK Gold', 2500 , 'https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODUwNjAzNzA1MDE3MDY0?story_media_id=3170827279927745224_57523216083&igshid=ZjA4NGQ2NTI1Ng==' , 4000, 'product8')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 9 -->
+            <div class="card" id="product9">
+                <div class="image">
+                    <img src="/static/image/women/w9.png" alt="WALK Black">
+                </div>
+                <div class="products_text">
+                    <h2>WALK Black</h2>
+                    <p>Price: Rs. <span class="productPrice">2500</span> <del>Rs. 4000</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('WALK Black', 2500 , 'https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODUwNjAzNzA1MDE3MDY0?story_media_id=3170826858601460942_57523216083&igshid=ZjA4NGQ2NTI1Ng==' , 4000, 'product9')">BUY NOW</a>
+                </div>
+            </div>
+              <!--product 10-->
+        <div class="card" id="product10">
+            <div class="image">
+                <img src="/static/image/women/w10.png" alt="WALK Silver">
+            </div>
+            <div class="products_text">
+                <h2>WALK Silver</h2>
+                <p>Price: Rs. <span class="productPrice">2500</span> <del>Rs. 4000</del> (38% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('WALK Silver', 2500 , 'https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODUwNjAzNzA1MDE3MDY0?story_media_id=3170827150969794813_57523216083&igshid=ZjA4NGQ2NTI1Ng==' , 4000, 'product10')">BUY NOW</a>
+            </div>
+        </div>
+   
+<!--Women row 3-->
+
+            <!--product 11-->
+            <div class="card" id="product11">
+                <div class="image">
+                    <img src="/static/image/women/w11.png" alt="FSH WALK White-Black">
+                </div>
+                <div class="products_text">
+                    <h2>FSH WALK White-Black</h2>
+                    <p>Price: Rs. <span class="productPrice">2500</span> <del>Rs. 4000</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('FSH WALK White-Black', 2500 ,'https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODUwNjAzNzA1MDE3MDY0?story_media_id=3170828921007953316_57523216083&igshid=ZjA4NGQ2NTI1Ng==' , 4000, 'product11')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 12 -->
+            <div class="card" id="product12">
+                <div class="image">
+                    <img src="/static/image/women/w12.png" alt="FSH WALK Light Pink">
+                </div>
+                <div class="products_text">
+                    <h2>FSH WALK Light Pink</h2>
+                    <p>Price: Rs. <span class="productPrice">2500</span> <del>Rs. 4000</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('FSH WALK Light Pink', 2500 , 'https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODUwNjAzNzA1MDE3MDY0?story_media_id=3170829470352637515_57523216083&igshid=ZjA4NGQ2NTI1Ng==' , 4000, 'product12')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 13-->
+            <div class="card" id="product13">
+                <div class="image">
+                    <img src="/static/image/women/w13.png" alt="FSH WALK Purp White">
+                </div>
+                <div class="products_text">
+                    <h2>FSH WALK Purp White</h2>
+                    <p>Price: Rs. <span class="productPrice">2500</span> <del>Rs. 4000</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('FSH WALK Purp White', 2500 , 'https://www.instagram.com/p/Cvbo4m1NHOO/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 4000, 'product13')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 14-->
+            <div class="card" id="product14">
+                <div class="image">
+                    <img src="/static/image/women/w14.png" alt="ATR Black">
+                </div>
+                <div class="products_text">
+                    <h2>ATR Black</h2>
+                    <p>Price: Rs. <span class="productPrice">3000</span> <del>Rs. 4800</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('ATR Black', 3000 , 'https://www.instagram.com/p/CvcPidZNd17/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 4800 , 'product14')">BUY NOW</a>
+                </div>
+            </div>
+              <!--product 15-->
+        <div class="card" id="product15">
+            <div class="image">
+                <img src="/static/image/women/w15.png" alt="ATR Light Pink">
+            </div>
+            <div class="products_text">
+                <h2>ATR Light Pink</h2>
+                <p>Price: Rs. <span class="productPrice">3000</span> <del>Rs. 4800</del> (38% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('ATR Light Pink', 3000 , 'https://www.instagram.com/p/CvcPUXaNuz5/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 4800, 'product15')">BUY NOW</a>
+            </div>
+        </div>
+    
+<!--Women row 4-->
+
+            <!--product 16-->
+            <div class="card" id="product16">
+                <div class="image">
+                    <img src="/static/image/women/w16.png" alt="ATR White">
+                </div>
+                <div class="products_text">
+                    <h2>ATR White</h2>
+                    <p>Price: Rs. <span class="productPrice">3000</span> <del>Rs. 4800</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('ATR White', 3000 ,'https://www.instagram.com/p/CvcPZXFNCIC/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 4800, 'product16')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 17 -->
+            <div class="card" id="product17">
+                <div class="image">
+                    <img src="/static/image/women/w17.png" alt="333 Black">
+                </div>
+                <div class="products_text">
+                    <h2>333 Black</h2>
+                    <p>Price: Rs. <span class="productPrice">2800</span> <del>Rs. 3500</del> (20% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('333 Black', 2800 , 'https://www.instagram.com/p/CvJ1-k5I05B/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 3500, 'product17')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 18-->
+            <div class="card" id="product18">
+                <div class="image">
+                    <img src="/static/image/women/w18.png" alt="333 Pink">
+                </div>
+                <div class="products_text">
+                    <h2>333 Pink</h2>
+                    <p>Price: Rs. <span class="productPrice">2800</span> <del>Rs. 3500</del> (20% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('333 Pink', 2800 , 'https://www.instagram.com/p/CvJ5E9BoRtf/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 3500, 'product18')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 19-->
+            <div class="card" id="product19">
+                <div class="image">
+                    <img src="/static/image/women/w19.png" alt="333 White">
+                </div>
+                <div class="products_text">
+                    <h2>333 White</h2>
+                    <p>Price: Rs. <span class="productPrice">2800</span> <del>Rs. 3500</del> (20% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('333 White', 2800 , 'https://www.instagram.com/p/CvJ5KjuIwDj/?utm_source=ig_web_copy_link' , 3500 , 'product19')">BUY NOW</a>
+                </div>
+            </div>
+              <!--product 20-->
+        <div class="card" id="product20">
+            <div class="image">
+                <img src="/static/image/women/w20.png" alt="FSH BF Black">
+            </div>
+            <div class="products_text">
+                <h2>FSH BF Black</h2>
+                <p>Price: Rs. <span class="productPrice">2600</span> <del>Rs. 5000</del> (48% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('FSH BF Black', 2600 , 'https://www.instagram.com/p/CvKHDlUI7Df/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5000, 'product20')">BUY NOW</a>
+            </div>
+        </div>
+   
+
+<!--Women row 5-->
+
+    
+       
+            <!--product21-->
+            <div class="card" id="product21">
+                <div class="image">
+                    <img src="/static/image/women/w21.png" alt="FSH BF Pink">
+                </div>
+                <div class="products_text">
+                    <h2>FSH BF Pink</h2>
+                    <p>Price: Rs. <span class="productPrice">2600</span> <del>Rs. 5000</del> (48% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('FSH BF Pink', 2600 ,'https://www.instagram.com/p/CvKHZO0o2nA/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5000, 'product21')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 22 -->
+            <div class="card" id="product22">
+                <div class="image">
+                    <img src="/static/image/women/w22.png" alt="FSH BF Brown">
+                </div>
+                <div class="products_text">
+                    <h2>FSH BF Brown</h2>
+                    <p>Price: Rs. <span class="productPrice">2600</span> <del>Rs. 5000</del> (48% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('FSH BF Brown', 2600 , 'https://www.instagram.com/p/CvKHfR9I7A_/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5000, 'product22')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 23-->
+            <div class="card" id="product23">
+                <div class="image">
+                    <img src="/static/image/women/w23.png" alt="FSH BING Black">
+                </div>
+                <div class="products_text">
+                    <h2>FSH BING Black</h2>
+                    <p>Price: Rs. <span class="productPrice">3000</span> <del>Rs. 5000</del> (40% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('FSH BING Black', 3000 , 'https://www.instagram.com/p/CvJ7b5PIrXX/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5000, 'product23')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 24-->
+            <div class="card" id="product24">
+                <div class="image">
+                    <img src="/static/image/women/w24.png" alt="FSH BING Pink">
+                </div>
+                <div class="products_text">
+                    <h2>FSH BING Pink</h2>
+                    <p>Price: Rs. <span class="productPrice">3000</span> <del>Rs. 5000</del> (40% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('FSH BING Pink', 3000 , 'https://www.instagram.com/p/CvJ7kd7oGTE/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5000 , 'product24')">BUY NOW</a>
+                </div>
+            </div>
+              <!--product 25-->
+        <div class="card" id="product25">
+            <div class="image">
+                <img src="/static/image/women/w25.png" alt="FSH BING Brown">
+            </div>
+            <div class="products_text">
+                <h2>FSH BING Brown</h2>
+                <p>Price: Rs. <span class="productPrice">3000</span> <del>Rs. 5000</del> (40% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('FSH BING Brown', 3000 , 'https://www.instagram.com/p/CvJ7vZion1Y/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5000, 'product25')">BUY NOW</a>
+            </div>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+ 
+
+
+
+    <!--form-->
+
+   <div id="productSelection">
+    <button onclick="closeForm()" style="float: right;">&#x2715;</button>
+    <h2 id="selectedProduct">Product Name</h2>
+    <p id="price">Price: Rs. <span id="productPrice">0.00</span> <del id="selectedCuttedPrice">Rs. </del></p>
+    <div class="discount">
+        <p><span id="discountPercentage">0%</span> off</p>
+    </div>
+        <div class="product_info">
+            <img src="" alt="Product Image">
+            <p id="selectedProductName">Product Name</p>
+
+            <div class="quantity" id="quantitySection">
+                <h3>Quantity:</h3>
+                <button onclick="decrementQuantity()">-</button>
+                <input type="number" id="quantity" name="Quantity" value="1" min="1" disabled>
+                <button onclick="incrementQuantity()">+</button>
+            </div>
+            <div class="quantity" id="size">
+                <h3>Size:</h3>
+                <button onclick="incrementSize()">-</button>
+                <input type="number" id="productSize" name="Size" value="1" min="1" disabled>
+                <button onclick="decrementSize()">+</button>
+            </div>
+        </div>
+        <a href="#" id="moreImagesLink" target="_blank"><h3>More Images</h3></a> <!-- Placeholder link for more images -->
+       
+        
+        
+    
+        <div class="order-form-container">
+           
+            <form action="https://formsubmit.co/devoxpk@gmail.com" method="POST">
+                <input type="hidden" id="customerId" name="Customer ID" value="">
+                <input type="hidden" id="productID" name="Product ID" value="">
+                <input type="hidden" id="selectedProductNameInput" name="Selected Product Name" value="">
+                <label class="cstmname" for="customerName">Name:</label>
+                <input type="text" id="customerName" name="Customer Name" placeholder="Enter your name" required>
+        
+                <label class="usrcity" for="userCity">City:</label>
+                <input type="text" id="userCity" name="City" placeholder="Enter your city" required><br>
+        
+                <label class="address" for="userAddress">Address:</label>
+                <input type="text" id="userAddress" name="Home Address" placeholder="Enter your home address" required>
+        
+                <label class="contactno" for="userContact">Contact Number:</label>
+                <input type="text" id="userContact" name="Contact Number" placeholder="Enter your contact" required><br>
+        
+                <label class="email" for="userEmail">Email:</label>
+                <input type="email" id="userEmail" name="Email" placeholder="Enter your mail(optional)">
+             
+                <!-- New input for additional details -->
+                <label class="detail" for="additionalDetails">Detail:</label>
+                <textarea id="additionalDetails" name="Details" placeholder="Enter any additional details here(optional)"></textarea><br>
+                <input type="hidden" id="selectedSize" name="Selected Size" value="1">
+                <input type="hidden" id="selectedQuantity" name="Selected Quantity" value="1">
+                
+                <button id="submitButton" type="submit" onclick="submitOrder();">Submit Order</button>
+                <div class="confirmation" id="orderConfirmation">
+                    <span class="tick">✓</span>Your order has been placed!<br><span class="captcha">Please fill the captcha to confirm your order</span>
+                    <a id="downloadLink" href="#" style="display: none;"></a>
+                </div>
+            </form>
+            <canvas id="receiptCanvas" style="display: none;"></canvas>
+           
+        </div>
+   </div>
+  
+<!--footer-->
+   <footer>
+    <div class="red-line"></div>
+    <p>&copy; All Rights Reserved by Devox 2023</p>
+  </footer>
+
+
+    <script>
+/*smtp*/
+
+
+
+        // Function to get the next customer number for sequencing
+        function getNextCustomerNumber() {
+            let currentNumber = localStorage.getItem("customerNumber");
+            if (!currentNumber) {
+                currentNumber = 1;
+            } else {
+                currentNumber = parseInt(currentNumber);
+                currentNumber++;
+            }
+            localStorage.setItem("customerNumber", currentNumber);
+            return currentNumber;
+        }
+
+            // Function to handle product selection and set "More Images" link
+     // Function to handle product selection and set "More Images" link
+     function selectProduct(productName, productPrice, moreImagesLink, ctall, productID) {
+    const productImage = document.querySelector(`[alt="${productName}"]`);
+    const selectedProductNameInput = document.getElementById("selectedProductNameInput"); // Get the hidden input element
+    clearandResetFormData();
+    // Update the selected product name in the hidden input
+    selectedProductNameInput.value = productName;
+
+    document.getElementById("selectedProduct").innerText = productName;
+    document.getElementById("productPrice").innerText = productPrice;
+    document.getElementById("productSelection").style.display = "block";
+
+    // Set product image and name in the form
+    document.getElementById("selectedProductName").innerText = productName;
+    productImage && (document.getElementById("productSelection").querySelector("img").src = productImage.src);
+
+    // Calculate discount percentage and discounted price
+    const discountPercentage = ((ctall - productPrice) / ctall) * 100;
+    document.getElementById("discountPercentage").innerText = discountPercentage.toFixed(0) + "%";
+    document.getElementById("moreImagesLink").href = moreImagesLink;
+    document.getElementById("selectedCuttedPrice").innerText = ctall;
+// sumbit button display 
+const submitButton = document.getElementById("submitButton");
+submitButton.style.display = "block";
+    // Scroll to the top of the form
+    const formElement = document.getElementById("productSelection");
+    formElement.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    // Set the product name and ID in the form
+    document.getElementById("selectedProductName").innerText = productName;
+    document.getElementById("productID").value = productID;
+    selectedProductID = productID;
+
+    selectedProductNameInput.value = productName;
+
+selectedProductName = productName;
+}
+/*clear and reset form data */
+function clearandResetFormData() {
+    document.getElementById("customerName").value = "";
+    document.getElementById("userEmail").value = "";
+    document.getElementById("userCity").value = "";
+    document.getElementById("userAddress").value = "";
+    document.getElementById("userContact").value = "";
+    document.getElementById("additionalDetails").value = "";
+    document.getElementById("productSize").value = 1;
+    document.getElementById("quantity").value = 1;
+}
+
+/*increment/decrement*/
+
+    let originalProductPrice;
+
+function incrementQuantity() {
+    const quantityInput = document.getElementById("quantity");
+    const currentQuantity = parseInt(quantityInput.value);
+    const maxQuantity = 50; // Set the maximum quantity allowed
+    if (currentQuantity < maxQuantity) {
+        quantityInput.value = currentQuantity + 1;
+        updateTotalPrice();
+    updateSelectedQuantity();
+    }
+}
+
+function decrementQuantity() {
+    const quantityInput = document.getElementById("quantity");
+    const currentQuantity = parseInt(quantityInput.value);
+    if (currentQuantity > 1) {
+        quantityInput.value = currentQuantity - 1;
+        updateTotalPrice();
+    updateSelectedQuantity();
+    }
+}
+function updateSelectedSize() {
+    const selectedSize = document.getElementById("productSize").value;
+    document.getElementById("selectedSize").value = selectedSize;
+}
+
+function updateSelectedQuantity() {
+    const selectedQuantity = document.getElementById("quantity").value;
+    document.getElementById("selectedQuantity").value = selectedQuantity;
+}
+
+function updateTotalPrice() {
+    // Get the original product price if it's not already set
+    if (!originalProductPrice) {
+        originalProductPrice = parseFloat(document.getElementById("productPrice").innerText);
+    }
+
+    const quantity = parseInt(document.getElementById("quantity").value);
+    const totalPrice = originalProductPrice * quantity;
+    document.getElementById("productPrice").innerText = totalPrice.toFixed(2);
+}
+
+function generateCustomerId() {
+            const customerId = Math.floor(100000 + Math.random() * 900000); // Generate a 6-digit customer ID
+            return customerId;
+        }
+
+        function submitOrder() {
+    const customerNameInput = document.getElementById("customerName");
+    const userCityInput = document.getElementById("userCity");
+    const userAddressInput = document.getElementById("userAddress");
+    const userContactInput = document.getElementById("userContact");
+    const selectedSizeInput = document.getElementById("productSize");
+
+    const customerName = customerNameInput.value;
+    const userCity = userCityInput.value;
+    const userAddress = userAddressInput.value;
+    const userContact = userContactInput.value;
+    const selectedSize = parseInt(selectedSizeInput.value);
+
+    // Check if required fields are filled out
+    if (!customerName || !userCity || !userAddress || !userContact ) {
+       // alert("Please fill out all required fields and select a valid size.");
+        return false; // Prevent form submission
+    }else if(selectedSize === 1){
+        alert("Please select a size")
+        return false;
+    }
+
+    const customerIdInput = document.getElementById("customerId");
+    const confirmationDiv = document.getElementById("orderConfirmation");
+    const downloadLink = document.getElementById("downloadLink");
+    const submitButton = document.getElementById("submitButton");
+    
+    // Hide the submit button and show the confirmation
+    submitButton.style.display = "none";
+    confirmationDiv.style.display = "block";
+
+    // Generate a customer ID and set it in the hidden input
+    const customerId = generateCustomerId();
+    customerIdInput.value = customerId;
+
+    generateReceiptTextImage(customerId);
+
+    // Display the confirmation message
+    confirmationDiv.style.display = "block";
+
+    // Generate and initiate the receipt download
+    const receiptText = generateReceiptText(customerId); // Implement this function to generate receipt content
+    const blob = new Blob([receiptText], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    downloadLink.href = url;
+    downloadLink.download = "order_receipt.txt";
+    
+    // Automatically trigger the download
+    downloadLink.click();
+}
+function generateReceiptTextImage(customerId) {
+
+    
+    const canvas = document.getElementById("receiptCanvas");
+    const context = canvas.getContext("2d");
+    const customerNameInput = document.getElementById("customerName");
+
+    const customerName = customerNameInput.value;
+
+    // Set canvas dimensions
+    const canvasWidth = 800;
+    const canvasHeight = 600;
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
+
+    // Set background color
+    context.fillStyle = "black"; // Change the background color to black
+    context.fillRect(0, 0, canvasWidth, canvasHeight);
+
+    // Load Devox logo image
+    const logo = new Image();
+    logo.src = "/static/image/devoxlog.png"; // Make sure to have this image in the same directory
+
+    logo.onload = function () {
+        // Draw the logo with adjusted dimensions
+        const logoHeight = 100; // Set the desired logo height
+        const logoWidth = (logo.width / logo.height) * logoHeight; // Maintain aspect ratio
+        context.drawImage(logo, (canvasWidth - logoWidth) / 2, 50, logoWidth, logoHeight);
+
+        // Add your message below the logo
+        context.fillStyle = "white"; // Set text color to white
+        context.font = "16px Arial";
+        const message = `Thank you, ${customerName}, for selecting Devox as your choice for purchasing your ${selectedProductName}. -Devox`;
+        const textWidth = context.measureText(message).width;
+        context.fillText(message, (canvasWidth - textWidth) / 2, 180);
+
+
+    
+
+        // ... (rest of your canvas drawing code)
+
+        // Convert canvas to data URL
+        const dataURL = canvas.toDataURL("image/png");
+
+        // Create a link to trigger the download
+        const downloadLink = document.createElement("a");
+        downloadLink.href = dataURL;
+        downloadLink.download = "receipt.png";
+
+        // Simulate a click on the link to trigger the download
+        downloadLink.click();
+    };
+}
+
+
+function generateReceiptText(customerId) {
+    const customerName = document.getElementById("customerName").value;
+    const userEmail = document.getElementById("userEmail").value || "Not Given";
+    const userCity = document.getElementById("userCity").value;
+    const userAddress = document.getElementById("userAddress").value;
+    const userContact = document.getElementById("userContact").value;
+    const selectedSize = document.getElementById("selectedSize").value;
+    const selectedQuantity = document.getElementById("selectedQuantity").value;
+    const productPrice = parseFloat(document.getElementById("productPrice").innerText);
+    const deliveryCharges = 0; // Assuming the delivery charges are fixed
+
+    const totalPrice = productPrice + deliveryCharges;
+
+    const receipt = `
+        Customer ID: ${customerId}
+        Customer Name: ${customerName}
+        Email: ${userEmail}
+        City: ${userCity}
+        Home Address: ${userAddress}
+        Contact Number: ${userContact}
+        Selected Size: ${selectedSize}
+        Selected Quantity: ${selectedQuantity}
+        Product ID: ${selectedProductID}
+        Product Name: ${selectedProductName}
+        Delivery Charges : ${deliveryCharges}
+        ________________________________________
+        Grand Total: Rs. ${totalPrice.toFixed(2)}
+        ________________________________________
+
+
+         Thank you, ${customerName}, for placing your order with us. Your grand total comes to Rs. ${totalPrice.toFixed(2)}.
+         We hope that you'll consider shopping with Devox again in the future.
+         Our dedicated team will be reaching out to you shortly.
+         Please feel free to stay connected with us for updates and more.
+    `;
+
+    return receipt;
+}
+
+
+//Increment and decrement size functions 
+
+function decrementSize() {
+        var productSizeInput = document.getElementById("productSize");
+        var currentSize = parseInt(productSizeInput.value);
+        productSizeInput.value = currentSize + 1;
+        updateSelectedSize();
+
+    }
+
+    // Function to decrement the size quantity
+    function incrementSize() {
+        var productSizeInput = document.getElementById("productSize");
+        var currentSize = parseInt(productSizeInput.value);
+        if (currentSize > 1) {
+            productSizeInput.value = currentSize - 1;
+            updateSelectedSize();
+        }
+    }
+
+    //closing the form
+
+    function closeForm() {
+    // Clear the form fields
+    document.getElementById("productSelection").style.display = "none";
+    document.getElementById("selectedProduct").innerText = "";
+    document.getElementById("productPrice").innerText = "";
+    document.getElementById("discountPercentage").innerText = "";
+    document.getElementById("moreImagesLink").href = "";
+    document.getElementById("selectedCuttedPrice").innerText = "";
+    document.getElementById("customerName").value = "";
+    document.getElementById("userEmail").value = "";
+    document.getElementById("userCity").value = "";
+    document.getElementById("userAddress").value = "";
+    document.getElementById("userContact").value = "";
+    document.getElementById("additionalDetails").value = "";
+    document.getElementById("productSize").value = 1;
+
+    // Reset the quantity to 1
+    document.getElementById("quantity").value = 1;
+    document.getElementById("orderConfirmation").style.display = "none";
+
+    // Scroll to the top of the form
+    const formElement = document.getElementById("productSelection");
+    formElement.scrollIntoView({ behavior: "smooth", block: "start" });
+
+   // const selectedProductID = "product" + (productIndex + 1); // Assume you have a variable called productIndex for tracking the selected product
+    const productCard = document.getElementById(selectedProductID);
+    if (productCard) {
+        productCard.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    // Clear the selectedProductID after using it
+    selectedProductID = null;
+}
+
+/*sidebar*/
+document.addEventListener("DOMContentLoaded", function () {
+  const sidebar = document.querySelector(".sidebar");
+  const menuIcon = document.querySelector(".menu-icon");
+  const closeIcon = document.querySelector(".close-icon");
+
+  let hasInteracted = false; // Flag to track user interaction
+
+  // Open sidebar when menu icon is clicked
+  menuIcon.addEventListener("click", function () {
+    sidebar.style.left = "calc(100% - 250px)"; // Open from the right
+    hasInteracted = true; // Set the flag when user interacts
+  });
+
+  // Close sidebar when close icon is clicked
+  closeIcon.addEventListener("click", function () {
+    sidebar.style.left = "100%"; // Close to the right
+  });
+
+  // Close sidebar when clicking anywhere outside of it
+  document.addEventListener("click", function (event) {
+    const target = event.target;
+    if (hasInteracted && !sidebar.contains(target) && !menuIcon.contains(target)) {
+      sidebar.style.left = "100%"; // Close the sidebar
+    }
+  });
+});
+
+
+
+</script>
+
+</body>
+
+</html>

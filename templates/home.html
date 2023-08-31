@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devox</title>
+    <link rel="shortcut icon" href="/static/image/wingshoe.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  @media (min-width:1px) and (max-width:3000px) and (min-height:1px) and (max-height:3000px){
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+ 
+  
+  body {
+    background-color: black;
+    color: white; /* Set default font color to white */
+    width: 80%;
+    overflow-x: hidden;
+   
+  }
+  
+  ::-webkit-scrollbar {
+    width: 15px;
+    display: none;
+  }
+  
+  /*::-webkit-scrollbar-track {
+    border-radius: 5px;
+    box-shadow:#4f0b0b;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background:#4f0b0b;
+  }*/
+ 
+
+
+.loading-bar {
+    width: 0;
+    height: 87px;
+    background: #a31717;
+    animation: loading 2s linear forwards;
+}
+
+@keyframes loading {
+    from {
+        width: 0;
+    }
+    to {
+        width: 126%;
+    }
+}
+
+  #X{
+    font-weight:bolder;
+    font-size: larger;
+    color:red;
+  }
+  section {
+    width: 100%;
+    height: 100vh;
+    background-image: url(image/bg1.png);
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Navigation Bar */
+  section nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+  
+  section nav .logo {
+    font-size: 35px;
+    color: #000000;
+    margin: 5px 0;
+    cursor: pointer;
+    position: relative;
+    left: -6%;
+  }
+  
+  section nav .logo span {
+    color: #030105;
+  }
+  
+  section nav ul {
+    list-style: none;
+  }
+  
+  section nav ul li {
+    display: inline-block;
+    margin: 5px 15px;
+  }
+  
+  section nav ul li a {
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
+  }
+  
+  section nav ul li a:hover {
+    color:#a31717;
+ 
+  }
+  
+  section nav .icons i {
+    margin: 0 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+  
+  section nav .icons i:hover {
+    color: #a31717;
+    font-weight: bolder;
+  }
+  
+  /* Main Section */
+  
+  section .main .main_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  section .main .main_content .main_text img {
+    font-size: 90px;
+    line-height: 70px;
+    position: relative;
+    top: 130px;
+    left: 23%;
+  }
+  
+  #devoxlog{
+    opacity: 0;
+    
+  }
+  
+  section .main .main_content .main_text h1 span {
+    font-size: 70px;
+    background: #a31717;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+  }
+  
+  section .main .main_content .main_text p {
+    width: 600px;
+    text-align: justify;
+    line-height: 21px;
+    position: relative;
+    top: 85px;
+    left: 23%;
+    
+  }
+  
+  section .main .main_content .main_image img {
+    width: 650px;
+    position: relative;
+    left: 150px;
+    top: 75px;
+  }
+  
+  section .main .social_icon {
+    position: absolute;
+    top: 50%;
+    left: 98%;
+    transform: translate(-50%, -50%);
+    font-size: 19px;
+  }
+  
+  section .main .social_icon i {
+    margin: 8px 0;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .social_icon i {
+        color: white;
+        transition: color 0.3s; /* Add a smooth transition effect */
+    }
+
+    .social_icon i:hover {
+        color: #a31717; /* Set the color on hover to #a31717 */
+    }
+ 
+  section .main .social_icon i:hover {
+    color: #a31717;
+    font-weight: bolder;
+  }
+  
+  section .main .button {
+    position: absolute;
+    left: 6%;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: #a31717;
+    margin-top:100px;
+  }
+  
+  section .main .button a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  
+  section .main .button i {
+    color: white;
+    margin-left: 5px;
+    transition: 0.3s;
+  }
+  
+  .button:hover i {
+    transform: translateX(6px);
+  }
+  
+
+/*button hover shop now */
+  .products .button {
+  position: absolute;
+margin-left: 50px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: #a31717;
+  
+}
+
+.products .button a {
+  color: white;
+  text-decoration: none;
+}
+
+.products .button i {
+  color: white;
+  margin-left: 5px;
+  transition: 0.3s;
+}
+
+.products .button:hover i {
+  transform: translateX(6px);
+}
+  /* Products Section */
+  .products {
+    width: 100%;
+    height: 120vh;
+    padding: 25px 0;
+    margin-top: 250px;
+    margin-left: 86px;
+  }
+  
+  .products h1 {
+    margin: 35px 100px;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: -1px;
+  }
+  
+  .products .box {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 25px 0;
+    
+  }
+  #product2{
+    margin-top:34px ;
+  }
+  
+  
+  .products .box .card {
+    width: 290px;
+    height: 440px;
+    border: 1px solid #a31717;
+    box-shadow: 4px 4px 11px 0 #a31717;
+
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px 20px;
+    background: black;
+  }
+  
+  .products .box .card .small_card {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    margin: 10px 0;
+    transform: translateX(-20px);
+    transition: 0.3s;
+    opacity: 0;
+  }
+  
+  
+  .products .box .card:hover .small_card {
+    transform: translateX(2px);
+    cursor: pointer;
+    opacity: 1;
+  }
+  
+  .products .box .card .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .products .box .card .image img {
+    width: 150px;
+    margin: 15px 0;
+    transition: 0.3s;
+  }
+  
+  .products .box .card:hover .image img {
+    transform: scale(1.1);
+  }
+  
+  .products .box .card .small_card i {
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 2px 0;
+    line-height: 40px;
+    border: 2px solid #a31717;
+    transition: 0.2s;
+  }
+  
+  .products .box .card .small_card i:hover {
+    color: #a31717;
+  }
+  #product2 h2{
+    margin-top: -32px;;
+  }
+ 
+  
+  .products .box .card .products_text h2 {
+    font-size: 30px;
+    margin-top: 15px;
+  }
+  
+  .products .box .card .products_text p {
+    color: white;
+    line-height: 21px;
+    margin: 30px 0;
+  }
+  
+  .products .box .card .products_text h3 {
+    margin: 7px 0;
+  }
+  
+  .products .box .card .products_text .products_star {
+    color: orange;
+    margin-bottom: 19px;
+    cursor: pointer;
+  }
+  
+  .products .box .card .products_text .btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    background: #a31717;
+    color: white;
+    
+  }
+  .info2{
+    margin-top: -30px;
+  }
+ 
+ 
+
+  
+  
+  /* About Section */
+  .about {
+    width: 100%;
+    height: 100vh;
+    padding: 35px 0;
+    margin-top: 1px;
+    margin-left: -10px;
+  }
+  
+  .about h1 {
+    font-size: 60px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+  }
+  
+  .about h1 span {
+    background: #a31717;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 15px;
+  }
+  .golden {
+    color: golden;
+}
+  
+  .about .about_main {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .about .about_main .about_image {
+    display: flex;
+    margin-top: 50px;
+  }
+  
+  .about .about_main .about_image .about_small_image {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 15px;
+  }
+  
+  .about .about_main .about_image .about_small_image img {
+    height: 92px;
+    margin: 5px 0;
+    cursor: pointer;
+    background:  #a31717 ;
+    display: block;
+    border-radius: 6px;
+    padding: 5px 5px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+    opacity: 0.8;
+    transition: 0.3s;
+  }
+  
+  .about .about_main .about_image .about_small_image img:hover {
+    opacity: 1;
+  }
+  
+  .about .about_main .image_contaner {
+    padding: 10px;
+    display: flex;
+  }
+  
+  .about .about_main .image_contaner img {
+    border: 3px solid #a31717;
+    border-radius: 20px;
+    height: 430px;
+    padding: 30px;
+    box-shadow: 0 0 8px #a31717;
+  }
+  
+  .about .about_main .about_text {
+    margin-top: 45px;
+  }
+  
+  .about .about_main .about_text p {
+    background: #a31717;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 22px;
+    width: 600px;
+    text-align: justify;
+    padding: 25px 30px;
+    border: 2px solid #a31717;
+    border-radius: 20px;
+    box-shadow: 0 0 8px #a31717;
+  }
+  
+  .about .about_btn {
+    color: black;
+    background: none;
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 25px;
+    border: 2px solid #a31717;
+    text-decoration: none;
+    box-shadow: 0 0 8px #a31717;
+    transition: 0.5s;
+  }
+  
+  .about .about_btn:hover {
+    border: 2px solid transparent;
+    background: #a31717;
+    color: white;
+  }
+  
+  /*wp*/
+  .wp {
+      position: fixed;
+      top: 50;
+    }
+  /* Services Section */
+  .services {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 80px 0 10px 0;
+    margin-top: 10px;
+  }
+  
+  .services h1 {
+    font-size: 60px;
+    text-transform: uppercase;
+  }
+  
+  .services h1 span {
+    margin-left: 15px;
+    background: #a31717;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .services .services_cards {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 50px;
+    margin-top: 10px;
+  }
+  
+  .services .services_box i {
+    font-size: 60px;
+    color: #a31717;
+    margin: 20px 0;
+    cursor: pointer;
+  }
+  
+  .services .services_box h3 {
+    margin-bottom: 12px;
+    font-size: 19px;
+  }
+  
+  .services .services_box p {
+    text-align: center;
+    color:white;
+    margin-bottom: 60px;
+  }
+  
+  /* Login Form Section */
+  .login_form {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url(image/loging_bg.png);
+    background-size: cover;
+    background-position: center;
+    background:black;
+  }
+  
+  .login_form .left img {
+    width: 650px;
+  }
+  
+  .login_form .right {
+    position: relative;
+    top: -50px;
+    left: -60px;
+    padding: 50px 80px;
+  }
+  
+  .login_form .right h1 {
+    font-family: prevattscriptssk;
+    font-size: 45px;
+    margin-bottom: 40px;
+  }
+  
+  .login_form .right p {
+    margin-bottom: 5px;
+  }
+  
+
+  
+  .login_form .right .user i {
+    position: relative;
+    top: 9px;
+    left: 15px;
+    color: #a31717;
+  }
+  
+
+  
+  .login_form .right .passworg_tag {
+    margin: 15px 0 5px 0;
+  }
+  
+  
+  
+  .login_form .right .password i {
+    position: relative;
+    top: 9px;
+    left: 15px;
+    color: #a31717;
+  }
+  
+  
+  
+  ::-webkit-input-placeholder {
+    color: white; /* Change placeholder color to white */
+    opacity: 0.7;
+  }
+  
+  .login_form .right .forget {
+    position: relative;
+    left: 60%;
+    margin: 6px 0 10px 0;
+    cursor: pointer;
+  }
+  
+  .login_form .right button {
+    width: 350px;
+    color: white;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    background: #a31717;
+  }
+  
+  .login_form .right .loging_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+  }
+  
+  .login_form .right .loging_icon a {
+    width: 30px;
+    height: 30px;
+    margin: 0 2px;
+    border-radius: 50%;
+    background: #f3f3f3;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  }
+  
+  .login_form .right .loging_icon img {
+    width: 20px;
+    margin: 5px 5px;
+  }
+  
+   /* Footer Section */
+   footer {
+            width: 126%;
+        }
+        .tag .socialacc:hover {
+    color: #a31717;
+    
+}
+        footer .footer_main {
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        footer .footer_main .tag {
+            margin: 10px 0;
+            margin-left: 1px;
+        }
+        
+        footer .footer_main .tag .center {
+            text-align: center;
+        }
+        
+        footer .footer_main .tag h1 {
+            font-size: 25px;
+            margin: 25px 0;
+            color: #a31717;
+        }
+        #cnct a:hover {
+    color: red;
+}
+#cnct i:hover {
+    color: #a31717;
+}
+        
+        footer .footer_main .tag a {
+            display: block;
+            color: black;
+            text-decoration: none;
+            margin: 9px 0;
+        }
+        
+        footer .footer_main .tag a i {
+            padding: 0 10px;
+            transition: 0.3s;
+        }
+        
+        footer .footer_main .tag a:hover i {
+            color: white;
+        }
+
+      
+        .social_link {
+            display: flex;
+        }
+        
+        .social_link a {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+            margin: 0 5px;
+            z-index: 10;
+            overflow: hidden;
+        }
+        
+        .social_link a .fa-brands {
+    font-size: 15px;
+    line-height: 30px;
+    z-index: 10;
+    position: relative;
+    transition: 0.5s;
+    color: black; /* Set the default color for the social icons */
+}
+
+.social_link a:hover .fa-brands {
+    color: white; /* Set the color to white on hover */
+}
+
+.social_link a::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -90px;
+    background: #a31717;
+    position: absolute;
+    z-index: -10;
+    transition: 0.5s;
+}
+
+.social_link a:hover::after {
+    left: 0;
+}
+        
+        footer .footer_main .tag .footer_input input[type='email'] {
+            width: 500px;
+            padding: 10px 20px;
+            outline: none;
+            border: none;
+            border-radius: 25px;
+        }
+        
+        footer .footer_main .tag .footer_input input[type='submit'] {
+            padding: 11px 30px;
+            margin-left: 15px;
+            background: linear-gradient(to right, #c72092, #6c14d0);
+            color: white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 25px;
+        }
+        
+        footer .footer_bottom {
+            background: #f3f1f1;
+            color: black;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 25px;
+        }
+
+
+
+
+ 
+
+  
+ 
+  
+ 
+
+  /*coming Soon Fomr*/
+  #menShopNow{
+    cursor: pointer;
+  }
+ /* Styles for the Coming Soon Form */
+.coming_soon_form {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 250px; /* Adjust the width as needed */
+  padding: 20px;
+  background-color: #000;
+  border: 2px solid #a31717;
+  border-radius: 20px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4);
+  z-index: 1000; /* Ensure the form is above other elements */
+  text-align: center;
+  transition: opacity 0.3s;
+}
+
+.coming_soon_form h2 {
+  color: #a31717;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.coming_soon_form p {
+  color: #ccc;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.coming_soon_form img {
+  width: 100px;
+  height: auto;
+  margin-top: 10px;
+}
+
+/* Darken background behind the form */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999; /* Ensure the overlay is below the form */
+  display: none;
+}
+
+
+.fa-star.rated {
+  color: gold; /* Change the color of the star when rated */
+}
+
+/* Hidden rating message */
+.rating_message {
+  display: none;
+}
+
+
+}
+/* Media queries */
+@media only screen and (max-width: 600px) {
+html {
+overflow-x: hidden;
+
+width: 100%;
+
+
+}
+body {
+width: 100%;
+overflow-x: hidden;
+font-size: 10px;
+height: 465vh;
+
+}
+#wp{
+  display: none;
+}
+section nav{
+  height: 24px;
+}
+.icons{
+  
+  margin-left: -11px;
+}
+section nav .logo{
+  font-size: 16px;
+    margin-left: 25px;
+    margin-top: 3px;
+}
+.main_image{
+  height: 100vh;
+}
+.loading-bar{
+  height: 26px;
+}
+
+section nav .social_link{
+  display: none;
+}
+
+/*section content after navbar*/
+
+section .main .main_content .main_text p{
+  font-size: 6px;
+    width: 49%;
+    margin-left: -71px;
+    margin-top: 28px;
+    height: 168vh;
+}
+section .main .main_content .main_image img{
+  margin-left: -342px;
+    width: 195px;
+    margin-top: -224px;
+    height: 320px;
+}
+section .main .social_icon{
+  margin-top: -32px;
+    margin-left: -7px;
+    font-size: 13px;
+}
+/*section text*/
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+section .main .main_content .main_text img {
+  width: 35vw;
+  margin-top: -39px;
+  font-size: 10px;
+  margin-left: -41px;
+  animation: fade-in 3s ease-in-out 0s ;
+}
+
+section .main .button{
+  margin-top: -771px;
+    margin-left: -10px;
+    font-size: 5px;
+    width: 86px;
+   position: relative;
+}
+
+/*product category*/
+
+.products{
+  margin-left:31px;
+  margin-top: -92px;
+  height: 240vh;
+  width: 0;
+}
+.products .box .card .small_card{
+  position: relative;
+}
+.products .products_text{
+  margin-top: 1px;
+}
+.info1{
+  margin-top: -120px;
+}
+.info2{
+  margin-top: -150px;
+}
+.info3{
+  margin-top: -120px;
+}
+.products h1{
+  display: none;
+}
+.products .box{
+  display: grid; /* Use grid layout for smaller screens */
+    grid-template-columns: repeat(1, 1fr); /* Four columns in each row */
+}
+.products .box .card{
+  height: 370px;
+    font-size: 9px;
+    width: 318px;
+    margin-left: -9px;
+
+    box-shadow: 1px 1px 11px 0 #a31717;
+    border-radius: 22px;
+
+}
+.products .box .card .products_text h2 {
+  font-size: 18px;
+}
+.products .button{
+  margin-left: 84px;
+    position: relative;
+    width: 105px;
+}
+
+
+/*about*/
+.about .about_main .image_contaner{
+ margin-top: 854px;
+}
+.about .about_main .about_image .about_small_image{
+  margin-left: 410px;
+    height: 2px;
+    margin-top: 857px;
+}
+.about .about_main .image_contaner img{
+  height: 180px;
+  width: 300px;
+}
+
+.about .about_main .about_image .about_small_image img{
+  height: 30px;
+}
+.about .about_main{
+  margin-left: -190px;
+  margin-top: -115px;
+}
+.about .about_main .about_image{
+  margin-top: -2566px;
+    height: 0vh;
+}
+
+
+
+/*services*/
+
+.services h1{
+  font-size: 20px;
+}
+.services .services_box i{
+  font-size: 50px;
+}
+.services .services_box h3{
+font-size: 10px;
+}
+.services .services_box p{
+  width: 102%;
+  font-size: 8px;
+}
+.services .services_cards{
+  width: 130%;
+    left: -16%;
+    margin-top: -18px;
+}
+.services{
+  margin-top: -700px;
+}
+.login_form .left img{
+  width: 400px;
+    margin-top: -88px;
+}
+
+
+/*footer*/
+
+  footer{
+    margin-top: -204px;
+  }
+  footer .footer_main .tag h1{
+    font-size: 17px;
+    margin: 25px 2px;
+  }
+  footer .footer_main{
+    height: 206px;
+  }
+  footer .footer_main .social_link{
+    margin-top: 147px;
+    margin-left: -284px;
+  }
+  #tik i{
+    display: none;
+  }
+ 
+
+  /*coming soon*/
+  .coming_soon_form{
+    width: 225px;
+    margin-left: 20px;
+  }
+ 
+  
+}
+
+
+
+
+/*iphoneX*/
+
+@media (width: 375px) and (height: 812px) {
+  
+  section .main .button{
+  margin-top: -1072px;
+}
+footer{
+  height: 41vh;
+}
+body{
+  height: 470vh;
+}
+.login_form .left img{
+  margin-top: 55px;
+}
+.products{
+  margin-left: 37px;
+}
+
+}
+
+/*Ipad*/
+
+@media (min-width: 601px) and (max-width: 800px){
+  .coming_soon_form{
+    top: 45%;
+    left: 53%;
+  }
+
+html{
+  overflow-x: hidden;
+}
+body{
+  overflow-x: hidden;
+  width: 100%;
+  font-size: 10px;
+}
+
+section nav .social_link{
+display: none;
+}
+section nav .logo{
+  margin-left: 67px;
+    margin-top: 6px;
+}
+.icons{
+  margin-left: 116px;
+    font-size: 21px;
+    width: 101vw;
+    margin-top: 10px;
+}
+section nav{
+  height: 55px;
+}
+.loading-bar{
+  height: 60px;
+}
+/*products*/
+.products{
+  margin-left: -33px;
+    
+    margin-top: -375px;
+
+}
+.products h1 {
+  font-size: 20px;
+  margin-left: 164px;
+}
+.products .box .card{
+  width: 250px;
+}
+/*section main*/
+.devoximg{
+  margin-left: -123px;
+    width: 316px;
+    margin-top: -326px;
+}
+section .main .main_content .main_text p{
+  margin-left: -157px;
+    width: 51vw;
+}
+section .main .main_content .main_image img{
+  margin-left: -430px;
+    width: 56vw;
+}
+section .main .button{
+  margin-top: -43px;
+    margin-left: -14px;
+}
+.social_icon{
+  margin-top: -195px;
+    margin-left: -7px;;
+}
+.about .about_main .image_contaner img{
+  width: 80vw;
+}
+.about{
+  margin-top: -500px;
+    margin-left: 3px;
+}
+.services{
+  margin-top: -200px;
+}
+.services .services_box p{
+  width: 210px;
+}
+.services .services_cards{
+  margin-left: -40px;
+}
+.services h1{
+  font-size: 40px;
+}
+/*footer*/
+footer{
+  margin-top: -105px;
+    height: 51vh;
+}
+.login_form .left img{
+  margin-top: 244px;
+}
+
+}
+
+
+
+
+
+/*pixel 2*/
+@media(width:411px) and (height:731px){
+section .main .button{
+  margin-top: -948px;
+}
+footer{
+  margin-top: -243px;
+}
+.products{
+  margin-left: 57px;
+}
+
+}
+/*pixel 2xl*/
+@media(width:411px) and (height:823px){
+  section .main .button{
+  margin-top: -1107px;
+}
+footer{
+  height: 42vh;
+    margin-top: -281px;
+}
+.products{
+  margin-left: 60px;
+}
+}
+/*iphone 5*/
+@media(width:320px) and (height:568px){
+  section .main .button{
+  margin-top: -655px;
+}
+}
+
+/*iphone 6 / 7 8  */
+@media(width:375px) and (height:667px){
+  section .main .button{
+  margin-top: -826px;
+}
+.products{
+  margin-left: 41px;
+}
+}
+
+/*iphone 6 / 7 / 8 +*/
+@media(width:414px) and (height:736px){
+  section .main .button{
+  margin-top: -965px;
+}
+footer{
+  
+  margin-top: -235px;
+    height: 35vh;
+}
+.about{
+  margin-top: -100px;
+}
+.products{
+  margin-left: 63px;
+}
+
+}
+/*iphone 11*/
+@media(width:414px) and (height:896px){
+  section .main .button{
+    margin-top: -1238px;
+    left: 8%;
+  }
+
+  .products{
+    margin-top: -246px;
+    margin-left: 15%;
+  }
+  .about{
+    margin-top: -156%;
+
+  }
+  body{
+    height: 409vh;
+  }
+  footer{
+    margin-top: -318px;
+  }
+}
+  
+  /*whatsapp styling */
+#wp{
+ text-decoration: none;
+ color: white;
+ margin-left: 968px;
+ 
+}
+#wp i{
+  top: 6px;
+    margin-top: 339px;
+    position: fixed;
+    /* size: 1px; */
+    font-size: 20px;
+    margin-left: 275px;
+    transition: color 0.5s ease;
+}
+
+/* Styles when scrolled */
+#wp.scrolled {
+  opacity: 1;
+  color: green;
+}
+/*ipad pro*/
+@media (min-width:1024px) and (max-width:1100px) and (min-height:1360px){
+html{
+  overflow-x: hidden;
+}
+body{
+ 
+  width: 100%;
+  overflow-x: hidden;
+}
+.coming_soon_form{
+  top: 25%;
+    left: 51%;
+}
+section .main .main_content .main_image img{
+  width: 55vw;
+    left: 6%;
+    height: 47vh;
+    margin-top: 31%;
+}
+
+section .main .main_content .main_text p{
+  left: 6%;
+    font-size: 15px;
+    margin-top: -10%;
+    width: 482px;;
+}
+section .main .button{
+  margin-top: -41px;
+    left: 1%;
+}
+.devoximg{
+  width: 314px;
+    margin-top: 13px;
+   margin-left: -28px;
+    gap: 44px;
+    margin: 29px;
+}
+section .main .main_content .main_text img{
+  left: 13%;
+}
+.products{
+  margin-top: -376px;
+    margin-left: 50px;
+    width: 0;
+}
+.about{
+  margin-top: -1100px;
+}
+.services{
+  margin-top: -150px;
+}
+.services .services_box p{
+  width: 227px;
+    margin-left: 1%;
+}
+.services .services_cards{
+  left: -5%;
+}
+footer{
+  height: 65vh;
+}
+.login_form .left img{
+  margin-top: 126%;
+}
+}
+/*widescreen*/
+@media (width:1366px){
+ 
+  #wp i{
+    left: 77%;
+    top: 13%;
+  }
+  .services .services_box p{
+    width: 233px;
+  }
+  .services .services_cards{
+    left: -6%;
+  }
+  footer{
+    height: 38vh;
+  }
+}
+
+        
+</style>
+</head>
+
+<body>
+    <div class="loading-bar"></div>
+
+    <section>
+        <nav>
+         
+
+          
+      
+            <div class="logo">
+                <h1>DEVO<span id="X">X</span></h1>
+            </div>
+            <div class="tag">
+                <div class="social_link">
+                    <a href="https://m.facebook.com/Devox.pk"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com/@devox.pk?_r=1&_d=di09fb035be51c&sec_uid=MS4wLjABAAAAOYCyp9AvwTBWs_qhLqr5oGlAXS31ZoOR7bqNLmnEoBnrYZ-CVCdY6l1ifTqFDmvY&share_author_id=7242328167497958405&sharer_language=en&source=h5_m&u_code=dimdi70igklka5&timestamp=1693423936&user_id=6968469275968619521&sec_user_id=MS4wLjABAAAAb9DzaF4Hq42gVXlTQ4YdwFfIE_CpusiwqGAWAkImDh0jb5IWTvcXgC0RIhVEruvg&utm_source=whatsapp&utm_campaign=client_share&utm_medium=android&share_iid=7269976009058699013&share_link_id=49e26760-2827-4752-acb4-54d471350fe8&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b6880%2Cb5836&social_share_type=5"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://instagram.com/devox.pk?igshid=MzRlODBiNWFlZA=="><i class="fa-brands fa-instagram"></i></a>
+
+
+                </div>
+            </div>
+
+            <ul class="icons">
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#Products">Products</a></li>
+                <li><a href="#Services">Services</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+
+        
+        </nav>
+
+        <div class="main" id="Home">
+            <div class="main_content">
+                <div class="main_text">
+                    <img class="devoximg" src="/static/image/devoxlog.png">
+                    <p>
+                        Discover Devox: Your Gateway to Quality Imported Products!
+                        Experience top-notch customer service with the convenience of free home delivery across Pakistan and hassle-free returns. Our curated selection of premium products comes at unbeatable prices, making luxury affordable for everyone. Backed by a team of skilled and experienced professionals, we ensure that every step of your shopping journey is delightful. Embrace the Devox experience today and elevate your lifestyle with authentic, high-quality imports.
+                    </p>
+                </div>
+                <div class="main_image">
+                    <img src="/static/image/shoes.png">
+                </div>
+            </div>
+            <div class="social_icon">
+              <a href="https://m.facebook.com/Devox.pk"> <i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@devox.pk?_r=1&_d=di09fb035be51c&sec_uid=MS4wLjABAAAAOYCyp9AvwTBWs_qhLqr5oGlAXS31ZoOR7bqNLmnEoBnrYZ-CVCdY6l1ifTqFDmvY&share_author_id=7242328167497958405&sharer_language=en&source=h5_m&u_code=dimdi70igklka5&timestamp=1693423936&user_id=6968469275968619521&sec_user_id=MS4wLjABAAAAb9DzaF4Hq42gVXlTQ4YdwFfIE_CpusiwqGAWAkImDh0jb5IWTvcXgC0RIhVEruvg&utm_source=whatsapp&utm_campaign=client_share&utm_medium=android&share_iid=7269976009058699013&share_link_id=49e26760-2827-4752-acb4-54d471350fe8&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b6880%2Cb5836&social_share_type=5"><i class="fab fa-tiktok"></i></a>
+                <a href="https://instagram.com/devox.pk?igshid=MzRlODBiNWFlZA=="><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="button">
+                <a href="#Products">SHOP NOW</a>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!--Products-->
+
+    <div class="products" id="Products">
+      <h1>Products</h1>
+    
+      <div class="box">
+        <div class="card">
+          <div class="small_card">
+            <i class="fa-solid fa-star" onclick="changeStarColor(this)"></i>
+            <i class="fa-solid fa-share" onclick="openShareOptions();"></i>
+           
+          </div>
+          <div class="info1">
+          <div class="image">
+            <img src="/static/image/shoes1.png">
+          </div>
+          <div class="products_text">
+            <h2>NEW ARRIVALS</h2>
+            <h3>MOST RATED</h3>
+            <div class="products_star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p>
+              Here you can pick your branded sneakers, grippers, and many more.
+            </p>
+            <div class="button">
+              <a href="new.html">SHOP NOW</a>
+              <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          </div>
+        </div>
+        </div>
+    
+        <div class="card">
+          <div class="small_card">
+            <i class="fa-solid fa-star" onclick="changeStarColor(this)"></i>
+            <i class="fa-solid fa-share" onclick="openShareOptions();"></i>
+          </div>
+          <div class="info2">
+          <div class="image">
+            <img src="/static/image/shoes2.png" id="shoe2">
+          </div>
+          <div class="products_text" id="product2">
+            <h2>Men's Casual</h2>
+            <h3>Coming Soon</h3>
+            <div class="products_star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <p id="s2p">
+              Here Men's can pick up there Casual footwears
+            </p>
+            
+            <div class="button">
+              <a  id="menShopNow">SHOP NOW</a>
+              <i class="fa-solid fa-chevron-right"></i>
+          </div>
+            
+          </div>
+        </div>
+        </div>
+    
+        <div class="card">
+          <div class="small_card">
+            <i class="fa-solid fa-star" onclick="changeStarColor(this)"></i>
+            <i class="fa-solid fa-share" onclick="openShareOptions();"></i>
+          </div>
+          <div class="info3">
+          <div class="image">
+            <img src="/static/image/shoes3.png">
+          </div>
+          <div class="products_text">
+            <h2>Women's</h2>
+            <h3>Most Rated</h3>
+            <div class="products_star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <p>
+              Here ladies can pick their branded footwears.
+            </p>
+            <div class="button">
+              <a href="women.html">SHOP NOW</a>
+              <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    <!--About-->
+
+    <div class="about" id="About">
+        <div class="about_main">
+            <div class="about_image">
+                <div class="about_small_image">
+                    <img src="/static/image/red_shoes1.png" onclick="functio(this)">
+                    <img src="/static/image/red_shoes2.png" onclick="functio(this)">
+                    <img src="/static/image/red_shoes3.png" onclick="functio(this)">
+                    <img src="/static/image/red_shoes4.png" onclick="functio(this)">
+                </div>
+                <div class="image_contaner">
+                    <img src="/static/image/red_shoes1.png" id="imagebox">
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function functio(small){
+                var full = document.getElementById("imagebox");
+                full.src = small.src;
+            }
+        </script>
+    </div>
+
+    <!--Services-->
+
+    <div class="services" id="Services">
+        <h1>Our Services</h1>
+
+        <div class="services_cards">
+            <div class="services_box">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>Fast Delivery</h3>
+                <p>
+                    Delivery all over the Pakistan and Cash on Delivery
+                </p>
+            </div>
+
+            <div class="services_box">
+                <i class="fa-solid fa-rotate-left"></i>
+                <h3>2 Days Replacement</h3>
+                <p>
+                   You can replace your shoe in case of wrong size or any broken product.
+                </p>
+            </div>
+
+            <div class="services_box">
+                <i class="fa-solid fa-headset"></i>
+                <h3>24 x 7 Support</h3>
+                <p>
+                    24/7 Customer Service Available.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!--Login Form-->
+    
+    <div class="login_form">
+        <div class="left">
+            <img src="/static/image/logshoes.png">
+        </div>
+    </div>
+<!--Coming Soon Form-->
+
+<div class="coming_soon_form" id="comingSoonForm">
+  <img src="/static/image/devoxlog.png" alt="Coming Soon Image">
+  <h2>Coming Soon</h2>
+  <p>Stay tuned for the latest Men's collection!</p>
+  
+</div>
+<a id="wp" href="https://wa.me/923104760641">
+  <i class="fab fa-whatsapp wp-icon"></i>
+</a>
+    <!--Footer-->
+
+    <footer>
+   
+      <div class="footer_main">
+        
+          <div class="tag" id="cnct">
+              <h1 id="Contact">Contact</h1>
+              <a href="#"><i class="fa-solid fa-house"></i>Lahore</a>
+              <a href="tel:03234341354"><i class="fa-solid fa-phone"></i>03234341354</a>
+              <a href="tel:03104760641"><i class="fa-solid fa-phone"></i>03104760641</a>
+              <a href="mailto:devoxpk@gmail.com"><i class="fa-solid fa-envelope"></i>devoxpk@gmail.com</a>
+          </div>
+
+          <div class="tag">
+              <h1>Social Accounts</h1>
+              <a class="socialacc" href="https://instagram.com/devox.pk?igshid=MzRlODBiNWFlZA==" class="center">Instagram</a>
+              <a class="socialacc" href="https://m.facebook.com/Devox.pk" class="center">Facebook</a>
+              <a class="socialacc" href="https://tiktok.com/@devox.pk" class="center">Tiktok</a>
+              <a class="socialacc" href="https://tiktok.com/@devox.pk" class="center">Whatsapp</a>
+          </div>
+
+          <div class="tag">
+              <div class="social_link">
+                  <a id="fbs" href="https://m.facebook.com/Devox.pk"><i class="fa-brands fa-facebook-f"></i></a>
+                  
+                  <a href="https://instagram.com/devox.pk?igshid=MzRlODBiNWFlZA=="><i class="fa-brands fa-instagram"></i></a>
+                  <!-- Add WhatsApp link with number -->
+                  <a href="https://wa.me/923104760641"><i class="fa-brands fa-whatsapp"></i></a>
+              </div>
+          </div>
+      </div>
+      
+  </footer>
+
+
+  <!-- Add Font Awesome script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-1xtwFF4N7y3OuYn0qfzP8yEkntgsr9vVhDkiT50lBXB4/BaBsN2WJMEqLbEug6wixQGB9WScLVFpg+Fp8N5vA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+
+
+
+
+/*wp*/
+
+var scrolledCount = 0;
+    
+    // Function to handle scroll event
+    function handleScroll() {
+      scrolledCount++;
+      
+      if (scrolledCount === 3) {
+        var wpLink = document.getElementById("wp");
+        
+        if (!wpLink.classList.contains("scrolled")) {
+          wpLink.classList.add("scrolled");
+        }
+      }
+    }
+    
+    // Attach scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+
+   document.addEventListener("DOMContentLoaded", function () {
+  var formContainer = document.getElementById("comingSoonForm");
+  var overlay = document.createElement("div");
+  overlay.className = "overlay";
+
+  // Function to show the form
+  function showComingSoonForm() {
+    formContainer.style.display = "block";
+    document.body.appendChild(overlay);
+
+    setTimeout(function () {
+      hideComingSoonForm();
+    }, 4000); // Auto-close after 5 seconds
+  }
+
+  // Function to hide the form
+  function hideComingSoonForm() {
+    formContainer.style.display = "none";
+    document.body.removeChild(overlay);
+  }
+
+  // Add event listener to the SHOP NOW button
+  var shopNowButton = document.getElementById("menShopNow");
+  shopNowButton.addEventListener("click", showComingSoonForm);
+
+  // Close the form when clicking outside
+  document.addEventListener("click", function (event) {
+    var target = event.target;
+    if (target !== formContainer && target !== shopNowButton && !formContainer.contains(target)) {
+      hideComingSoonForm();
+    }
+  });
+
+  // Close the form when pressing the Escape key
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      hideComingSoonForm();
+    }
+  });
+});
+
+
+function openShareOptions() {
+  // Create a message to share
+  var shareMessage = "Check out these amazing products!";
+  
+  // Create a URL with the WhatsApp share parameters
+  var whatsappURL = "whatsapp://send?text=" + encodeURIComponent(shareMessage);
+  
+  // Open the WhatsApp share URL
+  window.location.href = whatsappURL;
+}
+
+
+function changeStarColor(star) {
+  star.classList.toggle("rated"); // Add a CSS class to change the color of the star
+
+  // Add the rating message element and class
+  var ratingMessage = document.createElement("div");
+  ratingMessage.className = "rating_message";
+  ratingMessage.innerText = "Thanks for your rating";
+  
+  // Append the rating message to the parent element
+  star.parentNode.parentNode.appendChild(ratingMessage);
+  
+  // Use setTimeout to remove the message after a delay
+  setTimeout(function() {
+    ratingMessage.style.opacity = "0"; // Fade out the message
+    setTimeout(function() {
+      ratingMessage.remove(); // Remove the message element
+    }, 1000); // Remove after 1 second (adjust as needed)
+  }, 3000); // Show for 3 seconds (adjust as needed)
+}
+function toggleMenu() {
+  var nav = document.querySelector("nav");
+  nav.classList.toggle("active");
+}
+  </script>
+    
+</body>
+</html>

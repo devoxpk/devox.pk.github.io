@@ -1,0 +1,2792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devox - New Arrivals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="shortcut icon" href="/static/image/wingshoe.png">
+    
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+        }
+        
+/*loading bar */
+.loading-bar {
+    width: 0;
+    height: 85px;
+    background: #a31717;
+    animation: loading 2s linear forwards;
+}
+
+@keyframes loading {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+        /*navbar*/
+        section nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+            background: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+        section nav .logo {
+            font-size: 35px;
+            color: white;
+            margin-top: 10px;
+            cursor: pointer;
+            position: relative;
+            left: 4%;
+            margin-left: -50px;
+        }
+
+        section nav .logo:hover {
+            color: rgb(208, 68, 68);
+            color: linear-gradient(90deg, rgba(208, 68, 68, 1) 0%, rgba(84, 2, 13, 1) 35%, rgba(208, 68, 68, 1) 100%);
+        }
+
+        section nav .logo a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section nav .logo span {
+            color: #030105;
+            text-decoration: none;
+            /* Remove underline from the logo text */
+        }
+
+        section nav ul {
+            list-style: none;
+        }
+
+        section nav ul li {
+            display: inline-block;
+            margin: 5px 15px;
+        }
+
+        section nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: 0.2s;
+            font-weight: bold;
+            /* Set the link text to bold */
+        }
+
+        section nav ul li a:hover {
+            color: #a31717;
+            font-weight: bolder;
+        }
+
+        section nav .icons i {
+            margin: 0 4px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        section nav .icons i:hover {
+            color: #a31717;
+            font-weight: bolder;
+        }
+   
+        /*Social Links */
+        .social_link {
+    display: flex;
+  }
+
+  /* Styling for social accounts links */
+  .social-link-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+            margin-left: 391px;
+        }
+
+        .social-link-container a {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+            margin: 0 5px;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        .social-link-container a .fa-brands {
+            font-size: 15px;
+            line-height: 30px;
+            z-index: 10;
+            position: relative;
+            transition: 0.5s;
+            color: white;
+          
+        }
+
+        .social-link-container a:hover i {
+            color: white;
+        }
+
+        .social-link-container a::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+
+            left: -90px;
+            background: #a31717;
+            position: absolute;
+            z-index: -10;
+            transition: 0.5s;
+        }
+
+        .social-link-container a:hover::after {
+            left: 0;
+        }
+
+
+
+        /*products*/
+
+        .products {
+    width: 100%;
+    height: 380px; /* Updated height for better card display */
+    padding: 25px 0;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.products .box .card .products_text p {
+        margin-top: 5px;
+    }
+
+    .products .box .card .products_text .product_name {
+        margin-top: 10px;
+    }
+.products h1 {
+    font-size: 45px;
+    margin-top: 20px; /* Slightly reduced the margin for better alignment */
+}
+
+.products .box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px; /* Adjusted the margin-top for better spacing */
+}
+
+.products .box .card {
+    width: 220px;
+    height: 380px;
+    padding: 8px 15px;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; /* Increased margin-bottom for better spacing between cards */
+   box-shadow: 0 0 10px #a31717;
+    border: 2px solid #a31717;
+}
+
+.products .box .card .image img {
+    width: 150px;
+    margin: 10px 0; /* Adjusted margin for image position */
+    transition: 0.3s;
+}
+
+.products .box .card:hover .image img {
+    transform: scale(1.1);
+}
+
+.products .box .card .products_text h2 {
+    font-size: 30px;
+    margin-top: 10px; /* Adjusted the margin for heading position */
+    text-align: center;
+}
+
+.products .box .card .products_text .buy_now {
+        margin-top: 10px;
+    }
+
+    .products .box .card .products_text .btn {
+        text-decoration: none;
+        padding: 10px 20px;
+        background: #a31717;
+        color: white;
+        margin-top: 5px;
+        align-self: center;
+        cursor: pointer;
+    }
+
+    .products .box .card .products_text .btn:hover {
+        background: rgb(208, 68, 68);
+        background: linear-gradient(90deg, rgba(208, 68, 68, 1) 0%, rgba(84, 2, 13, 1) 35%, rgba(208, 68, 68, 1) 100%);
+    }
+    .products .box .card .products_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.products .box .card .products_text h2 {
+    font-size: 15px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.products .box .card .products_text .btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    background: #a31717;
+    color: white;
+    margin-top: 5px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.products .box .card .products_text .btn:hover {
+    background: rgb(208, 68, 68);
+    background: linear-gradient(90deg, rgba(208, 68, 68, 1) 0%, rgba(84, 2, 13, 1) 35%, rgba(208, 68, 68, 1) 100%);
+}
+
+.products .box .card .products_text p {
+    margin-top: 5px;
+}
+
+/* Adjusting the margin between button and price */
+.products .box .card .products_text .btn {
+    margin-bottom: 10px;
+}
+
+/*Nike*/
+#nike{
+    margin-top: 100px;
+}
+
+/*versace*/
+#versace{
+    margin-top: 100px;
+}
+.pr7{
+    margin-top: 80px;
+}
+#verimg{
+    height: 50px;
+    width:600px;
+}
+
+/*new Arrivals*/
+#newarr{
+    margin-top: 100px;
+}
+/*nikelogo*/
+.nikelogo{
+    height:70px;
+    width: 500px;
+
+}
+/*per product css */
+#product52 img{
+            margin-top: 100px;
+        }
+
+
+
+        /* Styling for "X" in "DEVOX" */
+        #X {
+            font-weight: bolder;
+            font-size: 50px;
+            /* Increase the font size to your desired value */
+            color: red;
+            text-decoration: none;
+            /* Remove underline from "X" */
+        }
+        
+
+     /*poster styling*/
+.poster {
+    margin-top: 80px;
+    text-align: center;
+    position: relative;
+}
+
+.poster img {
+    width: 1000px;
+    border: 2px #a31717 solid;
+    margin-top: 74px;
+    box-shadow: 8px 8px 15px #a31717;
+}
+
+.icon-row {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adjust the gap as needed */
+    margin-top: 200px;
+    margin-right: 70px;
+}
+
+.icon-link {
+    color: white;
+    font-size: 16px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+.icon-link:hover {
+    color: #a31717;
+}
+
+/* Adjusted the phone icon size */
+.icon-link i.fas.fa-phone {
+    font-size: 15px;
+}
+
+/**/
+        .btn {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
+        /*products row 2 jordan*/
+       
+        /* Form styles */
+        #productSelection {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 800px;
+            height: 560px;
+            position: fixed;
+            top: -35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 999;
+            margin-top: 492px;
+            overflow: visible; /* Add scrollbar when content overflows */
+    max-height: 100vh; 
+    padding-bottom: 20px; /* Add some bottom padding for space */
+
+    /* Custom scrollbar styles */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: transparent transparent; /* For Firefox */
+        
+        }
+
+        /* Webkit (Chrome, Safari) scrollbar styles */
+#productSelection::-webkit-scrollbar {
+    width: 6px; /* Width of the scrollbar */
+}
+
+#productSelection::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Color of the thumb (scrollable area) */
+}
+
+#productSelection::-webkit-scrollbar-track {
+    background-color: transparent; /* Color of the track (non-scrollable area) */
+}
+
+        #productSelection h2 {
+            font-size: 24px;
+            margin-bottom: -3px;
+            margin-top: -11px;
+        }
+
+        #productSelection form {
+            display: flex;
+            flex-direction: column;
+        
+        }
+
+        #productSelection label {
+            margin-top: -8px;
+            font-size: 13px;
+            
+        }
+        #productSelection input{
+            background-color: black;
+            color: white;
+        }
+        #productSelection #additionalDetails {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    width: 100%; /* Take full width */
+    height: 42px; /* Adjust the height as needed */
+    resize: vertical; /* Allow vertical resizing */
+    margin-top: 2px;
+}
+
+        #productSelection input,
+        #productSelection button {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #productSelection input[type="number"] {
+            width: 50px;
+            color:white;
+        }
+
+        #productSelection button {
+            background-color: #a31717;
+            color: white;
+            cursor: pointer;
+            margin-top: -5px;
+        }
+
+        #productSelection button:hover {
+            background-color: #841015;
+        }
+
+
+
+#productSelection .product_info img {
+    width: 50px;
+    margin-right: 20px;
+}
+
+
+        #productSelection .quantity {
+         /*   display: flex; */
+            align-items: center;
+            margin-top: -5px;
+            margin-left: 100px;
+        }
+
+        #productSelection .quantity button {
+            padding: 5px 10px;
+            margin: 0 5px;
+            background-color: #a31717;
+            color: white;
+            cursor: pointer;
+            border: none;
+            border-radius: 3px;
+        }
+
+        #productSelection .quantity button:hover {
+            background-color: #841015;
+        }
+
+        #productSelection .confirmation {
+            background-color: #0f6c0f;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: -15px;
+            display: none;
+        }
+
+        #productSelection .confirmation .tick {
+            font-size: 24px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        .order-form-container{
+            margin-top: 10px;
+        }
+        /* New styles for form */
+#productSelection .product_info {
+    display: flex;
+    align-items: center;
+    margin-top: -5px;
+}
+
+#productSelection .product_info img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+
+
+#productSelection .quantity {
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+/*inputs*/
+#productSelection .product_info h3{
+    margin-top: -10px;
+}
+#productSelection label.cstmname{
+    margin-top: 3px;
+}
+#productSelection #customerName{
+    margin-top: 3px;
+}
+#productSelection label.usrcity{
+    margin-top: 3px;
+}
+#productSelection #userCity{
+    margin-top: 4px;
+}
+
+#productSelection label.detail{
+    margin-top: 4px;
+}
+#productSelection label.address{
+    margin-top: -16px;
+}
+#productSelection #userAddress {
+    margin-top: 3px;
+}
+#productSelection label.contactno{
+    margin-top: 2px;
+}
+
+#productSelection #userContact {
+    margin-top: 3px;
+}
+
+#productSelection label.email{
+    margin-top: -17px;
+}
+#productSelection #userEmail {
+    margin-top: 3px;
+}
+
+#productSelection #size{
+    margin-left: 270px;
+    margin-top: -54px;
+}
+
+
+#mi{
+    text-decoration: none;
+    color: white;
+}
+#mi:hover{
+    color: #a31717;
+}
+
+/*Products rows upto 1 */
+.pr2{
+    margin-top: 255px;
+}
+.pr3{
+    margin-top:-1px;
+}
+.pr6{
+    margin-top:255px;
+}
+.pr7{
+    margin-top: 345px;
+}
+.pr8{
+    margin-top: 165px;
+}
+.pr9{
+    margin-top: 100px;
+}
+
+/*sidebar styling*/
+.menu-icon {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 500px;
+}
+
+
+
+.sidebar {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: #222;
+  transition: left 0.3s ease;
+  z-index: 999999;
+  overflow-y: auto; /* Add vertical scroll */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 0; /* Hide scrollbar for Chrome and Safari */
+}
+
+.close-icon {
+  font-size: 10px;
+  color: white;
+  cursor: pointer;
+  text-align: right;
+  padding: 10px;
+}
+.close-icon:hover{
+    color:#a31717;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar ul hr {
+  border-color: #888; /* Set the border color for <hr> tags */
+}
+
+.sidebar ul li.categories {
+    font-weight: bold;
+    padding: 10px;
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: #444; /* Add a background color for the heading */
+    border-top: 1px solid #a31717; /* Add a top border */
+    border-bottom: 1px solid #a31717; /* Add a bottom border */
+    margin: 0;
+}
+.sidebar ul li a:hover{
+  color: #b7b4b4;
+ 
+}
+
+
+.sidebar .parent-category .arrow {
+  font-size: 12px;
+  margin-left: 5px;
+ /* color: #a31717; /* Set arrow color */
+  transition: transform 0.3s ease, color 0.3s ease; /* Added color transition */
+}
+.sidebar .parent-category:hover .arrow {
+  transform: rotate(90deg);
+  color: #a31717; /* Set arrow color on hover */
+}
+.sidebar .sub-categories {
+  display: none;
+  margin-left: 15px;
+  padding: 0;
+}
+.sidebar .parent-category:hover .sub-categories {
+  display: block;
+}
+
+.sidebar .sub-categories a:hover {
+  color: #a31717; /* Change color on hover */
+}
+
+#orderConfirmation .captcha{
+    font-size: 10px;
+}
+
+/*footer*/
+footer {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      
+    }
+    .red-line {
+      border-top: 2px solid red;
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+
+
+
+
+
+
+
+
+
+
+    /*media queries */
+    @media (max-width: 600px){
+        .red-line{
+            margin-top: 4500px;
+        }
+        html{
+            overflow-x: hidden;
+        }
+        .nikelogo{
+            margin-left: 40px;
+        }
+   body{
+    font-size: 10px;
+    overflow-x: hidden;
+    
+   }
+   section nav .logo{
+    margin-left: 94px;
+    font-size: 20px;
+    width: 100vw;
+   }
+   section nav .logo #X{
+    
+    font-size: 30px;
+   }
+   .loading-bar{
+    height: 63px;
+    
+ 
+   }
+   @keyframes loading {
+    from{
+        width: 0px;
+    }
+    to{
+        width: 130%;
+    }
+    
+   }
+   .social-link-container{
+    margin-left: 0px;
+    width: 1000vw;
+   }
+   .menu-icon{
+    margin-left: -5px;
+    width: 100vw;
+    margin-top: 7px;
+   }
+   section nav{
+    margin-left: -100px;
+   }
+   
+
+   .quantity-size-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: center; /* Center the items horizontally */
+}
+
+
+
+   .poster {
+    margin-top: 80px;
+    text-align: center;
+    position: relative;
+    margin-left: -13px;
+}
+
+.poster img {
+    width: 315px;
+    border: 2px #a31717 solid;
+    margin-top: 74px;
+    box-shadow: 4px 2px 15px #a31717;
+}
+.icon-row {
+            margin-top: 66px;
+            left: 90.5%;
+          }
+          .icon-link{
+            font-size: 10px;
+            
+          }
+          .icon-link i.fas.fa-phone {
+    font-size: 10px;
+}
+
+        /*products*/
+        .products{
+            margin-left: -6px;
+        }
+        .products .box {
+        flex-direction: column; /* Change to column layout for smaller screens */
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    .products .box .card {
+        width: 170px; /* 10px = 2 * margin between cards */
+        margin: -1px; /* Adjust margin for spacing between cards */
+        height: 350px;
+    }
+
+    .products .box {
+        display: grid; /* Use grid layout for smaller screens */
+        grid-template-columns: 1fr 1fr; /* Two columns in each row */
+        grid-gap: -20px; /* Gap between columns and rows */
+        
+    }
+   
+    
+    .products_text{
+        margin-top: -10px;
+        font-size: 8px;
+    }
+    .products .image{
+        margin-top: 10px;
+    }
+    #j2{
+        margin-top: 572px;
+    }
+    #j3{
+        margin-top: 317px;
+    }
+  #j4{
+    margin-top: 318px;
+  }
+  #j5{
+    margin-top: 318px;
+  }
+  #nike{
+    margin-top: 500px;
+  }
+  #n2{
+    margin-top: 418px;
+  }
+  #n3{
+    margin-top: 318px;
+  }
+  #n4{
+    margin-top: 317px;
+  }
+  #n5{
+    margin-top: 317px;
+  }
+  #yeezy{
+    margin-top: 500px;
+  }
+  #y2{
+    margin-top: 662px;
+  }
+  #y3{
+    margin-top: 315px;
+  }
+  #newarr{
+    margin-top: 400px;
+    
+  }
+  #a2{
+    margin-top: 832px;
+  }
+  #a3{
+    margin-top: 665px;
+  }
+  #a4{
+    margin-top: 665px;
+  }
+  #a5{
+    margin-top: 666px;
+  }
+  #a6{
+    margin-top: 666px;
+  }
+
+  
+
+  /*form*/
+
+  #productSelection{
+    width: 317px;
+    margin-top: 573px;
+    height: 580px;
+    font-size: 12px;
+  }
+  #productSelection label {
+            
+            font-size: 11px;
+            margin-left: 4px;
+            
+        }
+        #productSelection label.address{
+    margin-top: -9px;
+}
+#productSelection #userAddress {
+    margin-top: 3px;
+}
+ 
+
+#productSelection .product_info h3{
+    margin-top: -12px;
+    
+}
+#productSelection #selectedProduct{
+    font-size: 20px;
+    font-weight: bolder;
+}
+#productSelection .product_info{
+    width: 148vw;
+    font-size: 12px;
+   
+    
+}
+
+
+#productSelection label.contactno{
+    margin-top: 4px;
+}
+
+
+
+#productSelection label.email{
+    margin-top: -10px;
+}
+
+#productSelection .quantity{
+    font-size: 10px;
+    width: 100vw;
+}
+ 
+
+#productSelection .quantity {
+         /*   display: flex; */
+            align-items: center;
+            margin-top: -5px;
+            margin-left: 10px;
+        }
+
+        #productSelection .quantity button {
+           
+            padding: 2px 7px;
+            margin: 0 3px;
+            background-color: #a31717;
+            color: white;
+            cursor: pointer;
+            border: none;
+            border-radius: 3px;
+            
+        }
+
+        .quantity-size-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 10px;
+        margin-left: 0;
+        margin-top: 18px;
+    
+    }
+    #productSelection #size{
+        margin-left: 10px;
+        margin-top: 0px;
+    }
+    #productSelection .confirmation {
+            background-color: #0f6c0f;
+            color: white;
+            padding: 1px;
+            text-align: center;
+            margin-top: -9px;
+            display: none;
+        }
+    
+      
+ 
+}
+
+/*widescreen*/
+@media (max-width: 1370px) and (min-width: 1300px) {
+    #productSelection {
+        margin-top: 550px;
+    }
+}
+
+/*iphoneX*/
+
+@media (width: 375px) and (height: 812px) {
+    body{
+        height: 2007vh;
+    }
+    #productSelection {
+        margin-top: 620px;
+    }
+}
+@media (max-width: 1019px) and (min-width: 801px){
+    #productSelection{
+        margin-top: 500px;
+    }
+}
+/*Ipad*/
+
+@media (max-width: 800px) and (min-width: 601px){
+    section nav .logo{
+        margin-left: 5px;
+    }
+    html{
+        overflow-x: hidden;
+    }
+    body{
+        overflow-x: hidden;
+        height: 963vh;
+    }
+    .red-line{
+        margin-top: 1330px;
+    }
+  
+   
+    #product81{
+        display: none;
+    }
+
+    #productSelection {
+        margin-top: 700px;
+        width: 90vw;
+        
+    }
+    #productSelection .quantity{
+        width: 100vw;
+    }
+    #productSelection .product_info{
+    width: 200vw;
+    font-size: 12px;
+   
+    
+}
+   .social-link-container{
+    margin-left: 220px;
+    width: 1000vw;
+   }
+   .menu-icon{
+    width: 1000vw;
+    margin-left: 209px;
+
+   }
+   .poster img{
+    width: 680px;
+    margin-left: -10px;
+   }
+
+   .products .box {
+    display: grid; /* Use grid layout for smaller screens */
+    grid-template-columns: repeat(4, 1fr); /* Four columns in each row */
+    grid-gap: 0px; /* Gap between columns and rows */
+    align-items: center;
+    margin-left: 10px;
+}
+
+.products .box .card {
+    width: 180px; /* Calculate width for 4 columns with gap */
+    height: 380px;
+    margin: 0; /* Reset margin */
+}
+
+#product82{
+    display: none;
+}
+.icon-row{
+    left: 95%;
+}
+
+
+
+}
+
+/*ipad pro*/
+@media (max-width:1125px) and (min-width: 1020px){
+    body{
+        height: 730vh;
+    }
+    .poster img{
+        width: 900px;
+    }
+    .icon-row{
+        left: 96%;
+    }
+    #productSelection{
+        margin-top: 830px;
+    }
+    
+   .red-line{
+    margin-top: 550px;
+   }
+    section nav .logo{
+        margin-left: -20px;
+    }
+    .social-link-container{
+        margin-left: 364px;
+    }
+   .menu-icon{
+    margin-left: 350px;
+   }
+.newarrall .box{
+    
+    display: grid; /* Use grid layout for smaller screens */
+    grid-template-columns: repeat(5, 1fr);
+    width: 80vw;
+    margin-left: -112px;
+
+}
+#newarr .newarrall{
+     width: 43vh;;
+}
+.newarrall .box .card {
+       width: 190px;
+      
+    }
+}
+/*pixel 2*/
+@media (width:411px) and (height:731px){
+    .red-line{
+        height: 0vh;
+    }
+    footer p{
+        margin-top: -70px;
+    height: 9vh;
+    }
+}
+/*pixel 2 xl*/
+@media(width:411px){
+    #productSelection{
+        margin-top: 705px;
+    }
+    footer p{
+        margin-top: 14px;
+    height: 19vh;
+
+    }
+    
+}
+/*iphone 6 7 8 plus*/
+@media (width:414px) and (height:736px){
+   footer .red-line{
+        height: 33vh;
+}
+
+footer p{
+  margin-top:-82px
+}
+}
+/*iphone 11*/
+@media (width:414px){
+    .red-line{
+        margin-top: 4588px;
+    height: 27vh;
+    }
+    footer p{
+        margin-top: -237px;
+    }
+#productSelection{
+    margin-top: 650px;
+}
+}
+@media(width:320px){
+   #productSelection{
+    margin-top: 490px;
+   }
+}
+
+/*iphone 5 */
+@media (width:320px){
+    .products .box .card{
+        width: 150px;
+    }
+ 
+}
+/*new arrivals */
+    #newarr .newarrall{
+        display: grid;
+    grid-template-columns: repeat(1, 5fr);
+    }
+    #newarr .newarrall .box{
+        justify-content: center;
+    }
+    #newarr .newarrall .box .card{
+        margin-bottom: 0;
+    }
+   footer{
+    margin-top: 180%;
+   }
+    </style>
+</head>
+
+<body>
+ 
+    <div class="loading-bar"></div>
+    <div class="poster">
+        <div class="icon-row">
+            <a href="home.html" class="icon-link" title="Home"><i class="fas fa-home"></i></a>
+            <a href="home.html#Contact" class="icon-link" title="Contact"><i class="fas fa-phone"></i></a>
+            <a href="https://wa.me/923234341354" class="icon-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <img src="/static/image/posters/newarrposter.jpg">
+    </div>
+    
+
+
+    <!--navbar-->
+    <section>
+        <nav>
+            <div class="logo">
+                <h1><a href="home.html">DEVO<span id="X">X</span></a></h1>
+            </div>
+
+            <!--social-->
+            <div class="social-link-container">
+                <a href="https://m.facebook.com/Devox.pk" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@devox.pk?_r=1&_d=di09fb035be51c&sec_uid=MS4wLjABAAAAOYCyp9AvwTBWs_qhLqr5oGlAXS31ZoOR7bqNLmnEoBnrYZ-CVCdY6l1ifTqFDmvY&share_author_id=7242328167497958405&sharer_language=en&source=h5_m&u_code=dimdi70igklka5&timestamp=1693423936&user_id=6968469275968619521&sec_user_id=MS4wLjABAAAAb9DzaF4Hq42gVXlTQ4YdwFfIE_CpusiwqGAWAkImDh0jb5IWTvcXgC0RIhVEruvg&utm_source=whatsapp&utm_campaign=client_share&utm_medium=android&share_iid=7269976009058699013&share_link_id=49e26760-2827-4752-acb4-54d471350fe8&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b6880%2Cb5836&social_share_type=5" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://instagram.com/devox.pk?igshid=MzRlODBiNWFlZA==" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            
+  <!-- Sidebar -->
+  <div class="menu-icon">
+    <div class="bar">☰</div>
+   
+  </div>
+
+ 
+
+</nav>
+<div class="sidebar">
+    <div class="close-icon" onclick="closeIcon()">✕</div>
+    <ul>
+        <li class="categories">Categories</li>
+        <li class="parent-category">
+          <a href="#jordan">JORDAN<span class="arrow">▼</span></a>
+          <ul class="sub-categories">
+            <li><a href="#jordan">AIR JORDAN 4</a></li>
+            <li><a href="#product6">AJ1 HIGHS</a></li>
+            <li><a href="#product18">AJ1 LOWS</a></li>
+          </ul>
+        </li>
+        <hr>
+        <li class="parent-category">
+            <a href="#nike">NIKE<span class="arrow">▼</span></a>
+            <ul class="sub-categories">
+              <li><a href="#product25">NIKE AIRFORCE 1</a></li>
+              <li><a href="#nike">NIKE AIRFORCE 1 UTILITY</a></li>
+              <li><a href="#product31">NIKE AIR ZOOM</a></li>
+              <li><a href="#product67">NIKE AIRMAX 720</a></li>
+              <li><a href="#product28">NIKE TS SPECIAL EDITION</a></li>
+              <li><a href="#product35">AIR NIKE ZOOM</a></li>
+              <li><a href="#product40">NIKE FLYKNIT</a></li>
+              <li><a href="#product30">NIKE BOLD</a></li>
+            </ul>
+          </li>
+          <hr>
+        <li><a href="#yeezy">YEEZY 350 BOOST V2</a></li><hr>
+        <li><a href="#product60">YEEZY 450</a></li><hr>
+        <li><a class="storm" href="#product64">YEEZY FOAM RUNNER</a></li><hr>
+        <li><a class="storm" href="#product73">LIGHTNING STORM™</a></li><hr>
+        <li><a href="#newarr">ADDIDAS ULTRA BOOST</a></li><hr>
+        <li><a href="#product53">SKETCHERS ULTRA GO</a></li><hr>
+        <li><a href="#product68">MAISON 700</a></li><hr>
+        <li><a href="#product76">LIFE RUNNING</a></li><hr>
+        <li><a href="#product71">FASHION ABCDEF</a></li><hr>
+        <li><a href="#product79">OFF-WH</a></li>
+    </ul>
+</div>
+
+</section>
+  <!--Jordan products-->
+<!-- Jordan Products row 1-->
+<div class="products" id="jordan">
+    <h1><img src="/static/image/jordanimg.png"></h1>
+    <div class="box">
+        <!--product 1 -->
+        <div class="card" id="product1">
+            <div class="image">
+                <img src="/static/image/jordan/j1.png" alt="AJ4 Triple-Black">
+            </div>
+            <div class="products_text">
+                <h2>AJ4 Triple-Black</h2>
+                <p>Price: Rs. <span class="productPrice">5499</span> <del>Rs. 8500</del> (35% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ4 Triple-Black', 5499 , 'https://www.instagram.com/p/CvdRtTBt5Mr/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 8500, 'product1')">BUY NOW</a>
+            </div>
+        </div>
+        <!--Product 2 -->
+        <div class="card" id="product2">
+            <div class="image">
+                <img src="/static/image/jordan/j2.png" alt="AJ4 Grey Duo">
+            </div>
+            <div class="products_text" id="product2">
+                <h2>AJ4 Grey Duo</h2>
+                <p>Price: Rs. <span class="productPrice">5499</span> <del>Rs. 8500</del> (35% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ4 Grey Duo', 5499, 'https://www.instagram.com/p/CvdRq9PtC_E/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' ,8500, 'product2')">BUY NOW</a>
+            </div>
+        </div>
+        <!--product 3 -->
+        <div class="card" id="product3">
+            <div class="image">
+                <img src="/static/image/jordan/j3.png" alt="AJ4 Retro MetroSports">
+            </div>
+            <div class="products_text">
+                <h2>AJ4 Retro MetroSports</h2>
+                <p>Price: Rs. <span class="productPrice">5499</span> <del>Rs. 8500</del> (35% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ4 Retro MetroSports', 5499 , 'https://www.instagram.com/p/CvdRoQytZU_/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' ,8500, 'product3')">BUY NOW</a>
+            </div>
+        </div>
+        <!--product 4-->
+        <div class="card" id="product4">
+            <div class="image">
+                <img src="/static/image/jordan/j4.png" alt="AJ4 Green Yellow-Toe">
+            </div>
+            <div class="products_text">
+                <h2>AJ4 Green Yellow-Toe</h2>
+                <p>Price: Rs. <span class="productPrice">5499</span> <del>Rs. 8500</del> (50% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ4 Green Yellow-Toe', 5499 , 'https://www.instagram.com/p/CvdRlSVt8XL/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 8500, 'product4')">BUY NOW</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Jordan Products row 2 -->
+<div class="pr2">
+    <div class="products" id="j2">
+        <div class="box">
+            <!--product 5 -->
+            <div class="card" id="product5">
+                <div class="image">
+                    <img src="/static/image/jordan/j5.png" alt="AJ1 HIGH OG Red">
+                </div>
+                <div class="products_text">
+                    <h2>AJ1 HIGH OG Red</h2>
+                    <p>Price: Rs. <span class="productPrice">4199</span> <del>Rs. 8000</del> (50% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ1 HIGH OG Red', 3500 ,'https://www.instagram.com/p/CvEt4OGI_dg/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' ,8500, 'product5')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 6-->
+            <div class="card" id="product6">
+                <div class="image">
+                    <img src="/static/image/jordan/j6.png" alt="AJ1 HIGH Pine Green">
+                </div>
+                <div class="products_text">
+                    <h2>AJ1 HIGH Pine Green</h2>
+                    <p>Price: Rs. <span class="productPrice">4199</span> <del>Rs. 8000</del> (50% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ1 HIGH Pine Green', 4199 , 'https://www.instagram.com/p/CvEuBUjos1I/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' ,8000, 'product6')">BUY NOW</a>
+                </div>
+
+            </div>
+            <!--product 7-->
+            <div class="card" id="product7">
+                <div class="image">
+                    <img src="/static/image/jordan/j7.png" alt="AJ1 HIGH Yellow Taxi">
+                </div>
+                <div class="products_text" id="product2">
+                    <h2>AJ1 HIGH Yellow Taxi</h2>
+                    <p>Price: Rs. <span class="productPrice">4199</span> <del>Rs. 8000</del> (50% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ1 HIGH Yellow Taxi', 4199 , 'https://www.instagram.com/p/CvFJJqqIlY8/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 8000, 'product7')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 8 -->
+            <div class="card" id="product8">
+                <div class="image">
+                    <img src="/static/image/jordan/j8.png" alt="AJ1 HIGH University Blue">
+                </div>
+                <div class="products_text">
+                    <h2>AJ1 HIGH University Blue</h2>
+                    <p>Price: Rs. <span class="productPrice">4199</span> <del>Rs. 8000</del> (50 % off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ1 HIGH University Blue', 4199 , 'https://www.instagram.com/p/CvEt9jSIpMf/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 7500, 'product8')">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Jordan Products row 3-->
+<div class="pr3">
+    <div class="products" id="j3">
+        <div class="box">
+            <!--product 9-->
+            <div class="card" id="product9">
+                <div class="image">
+                    <img src="/static/image/jordan/j9.png" alt="AJ1 HIGH Midnight Navy">
+                </div>
+                <div class="products_text">
+                    <h2>AJ1 HIGH Midnight Navy</h2>
+                    <p>Price: Rs. <span class="productPrice">4199</span> <del>Rs. 8000</del> (48% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ1 HIGH Midnight Navy', 4199 ,'https://www.instagram.com/p/CvdNLW9NN74/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 8000, 'product9')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 10 -->
+            <div class="card" id="product10">
+                <div class="image">
+                    <img src="/static/image/jordan/j10.png" alt="AJ1 HIGH Mid Top-3">
+                </div>
+                <div class="products_text">
+                    <h2>AJ1 HIGH Mid Top-3</h2>
+                    <p>Price: Rs. <span class="productPrice">4199</span> <del>Rs. 8000</del> (48% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ1 HIGH Mid Top-3', 4199 , 'https://www.instagram.com/p/CvdNGj9t8eH/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 8000, 'product10')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 11-->
+            <div class="card" id="product11">
+                <div class="image">
+                    <img src="/static/image/jordan/j11.png" alt="AJ1 HIGH Shadow">
+                </div>
+                <div class="products_text">
+                    <h2>AJ1 HIGH Shadow</h2>
+                    <p>Price: Rs. <span class="productPrice">4199</span> <del>Rs. 8000</del> (48% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ1 HIGH Shadow', 4199 , 'https://www.instagram.com/p/CvdNRbttiq5/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 8000, 'product11')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 12-->
+            <div class="card" id="product12">
+                <div class="image">
+                    <img src="/static/image/jordan/j12.png" alt="AJ1 HIGH Mid WhiteBlack">
+                </div>
+                <div class="products_text">
+                    <h2>AJ1 HIGH Mid White Black</h2>
+                    <p>Price: Rs. <span class="productPrice">4199</span> <del>Rs. 8000</del> (48% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ1 HIGH Mid White Black', 4199 , 'https://www.instagram.com/devox.pk/' , 8000 , 'product12')">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Jordan Products row 4-->
+<div class="pr3">
+    <div class="products" id="j4">
+        <div class="box">
+            <!--product 13-->
+            <div class="card" id="product13">
+                <div class="image">
+                    <img src="/static/image/jordan/j13.png" alt="AJ1 HIGH Dark Grey">
+                </div>
+                <div class="products_text">
+                    <h2>AJ1 HIGH Dark Grey</h2>
+                    <p>Price: Rs. <span class="productPrice">4199</span> <del>Rs. 8000</del> (48% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ1 HIGH Dark Grey', 4199 ,'https://www.instagram.com/p/CvEtZN3oBal/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 8000, 'product13')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 14 -->
+            <div class="card" id="product14">
+                <div class="image">
+                    <img src="/static/image/jordan/j14.png" alt="AJ1 HIGH Panda">
+                </div>
+                <div class="products_text">
+                    <h2>AJ1 HIGH Panda</h2>
+                    <p>Price: Rs. <span class="productPrice">4199</span> <del>Rs. 8000</del> (48% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ1 HIGH Panda', 4199 , 'https://www.instagram.com/p/CvEtZO9og6K/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 8000, 'product14')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 15-->
+            <div class="card" id="product15">
+                <div class="image">
+                    <img src="/static/image/jordan/j15.png" alt="AJ1 HIGH Mid Grey">
+                </div>
+                <div class="products_text">
+                    <h2>AJ1 HIGH Mid Grey</h2>
+                    <p>Price: Rs. <span class="productPrice">4199</span> <del>Rs. 8000</del> (48% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ1 HIGH Mid Grey', 4199 , 'https://www.instagram.com/p/CvFJFsFISxP/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 8000, 'product15')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 16-->
+            <div class="card" id="product16">
+                <div class="image">
+                    <img src="/static/image/jordan/j16.png" alt="AJ1 HIGH Mid Triple White">
+                </div>
+                <div class="products_text">
+                    <h2>AJ1 HIGH Mid Triple White</h2>
+                    <p>Price: Rs. <span class="productPrice">4199</span> <del>Rs. 8000</del> (48% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ1 HIGH Mid Triple White', 4199 , 'https://www.instagram.com/p/CvEtiUUofH7/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 8000 , 'product16')">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Jordan Products row 5-->
+<div class="pr3">
+    <div class="products" id="j5">
+        <div class="box">
+            <!--product 17-->
+            <div class="card" id="product17">
+                <div class="image">
+                    <img src="/static/image/jordan/j17.png" alt="AJ1 LOW Dark Grey">
+                </div>
+                <div class="products_text">
+                    <h2>AJ1 LOW Dark Grey</h2>
+                    <p>Price: Rs. <span class="productPrice">4199</span> <del>Rs. 8000</del> (48% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ1 LOW Dark Grey', 4199 ,'https://www.instagram.com/p/CvEvr4ioKMf/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 8000, 'product17')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 18 -->
+            <div class="card" id="product18">
+                <div class="image">
+                    <img src="/static/image/jordan/j18.png" alt="AJ1 LOW Panda">
+                </div>
+                <div class="products_text">
+                    <h2>AJ1 LOW Panda</h2>
+                    <p>Price: Rs. <span class="productPrice">4199</span> <del>Rs. 8000</del> (48% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ1 LOW Panda', 4199 , 'https://www.instagram.com/p/CvFI9xaInxF/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 8000, 'product18')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 19-->
+            <div class="card" id="product19">
+                <div class="image">
+                    <img src="/static/image/jordan/j19.png" alt="AJ1 LOW Light Smoke Grey">
+                </div>
+                <div class="products_text">
+                    <h2>AJ1 LOW Light Smoke Grey</h2>
+                    <p>Price: Rs. <span class="productPrice">4199</span> <del>Rs. 8000</del> (48% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ1 LOW Light Smoke Grey', 4199 , 'https://www.instagram.com/p/CvEukXgIyle/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 8000, 'product19')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 20-->
+            <div class="card" id="product20">
+                <div class="image">
+                    <img src="/static/image/jordan/j20.png" alt="AJ1 LOW Red Black-Toe">
+                </div>
+                <div class="products_text">
+                    <h2>AJ1 LOW Red Black-Toe</h2>
+                    <p>Price: Rs. <span class="productPrice">4199</span> <del>Rs. 8000</del> (48% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AJ1 LOW Red Black-Toe', 4199 , 'https://www.instagram.com/p/CvEuoJBIh1C/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 8000 , 'product20')">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+ <!--Nike products-->
+<!-- Nike Products row 1-->
+<div class="products" id="nike">
+    <h1><img class="nikelogo" src="/static/image/logos/nikelogo.PNG"></h1>
+    <div class="box">
+        <!--product 21 -->
+        <div class="card" id="product21">
+            <div class="image">
+                <img src="/static/image/nike/n1.png" alt="NIKE AF1 UTILITY Yellow">
+            </div>
+            <div class="products_text">
+                <h2>NIKE AF1 UTILITY Yellow</h2>
+                <p>Price: Rs. <span class="productPrice">3500</span> <del>Rs. 6000 </del> (42% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE AF1 UTILITY Yellow', 3500 , 'https://www.instagram.com/p/CvHkCvHIRDv/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 6000, 'product21')">BUY NOW</a>
+            </div>
+        </div>
+        <!--Product 22 -->
+        <div class="card" id="product22">
+            <div class="image">
+                <img src="/static/image/nike/n2.png" alt="NIKE AF1 UTILITY Black-White">
+            </div>
+            <div class="products_text" id="product22">
+                <h2>NIKE AF1 UTILITY Black-White</h2>
+                <p>Price: Rs. <span class="productPrice">3500</span> <del>Rs. 6000</del> (42% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE AF1 UTILITY Black-White', 3500 , 'https://www.instagram.com/p/CvdPKtFtD4u/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' ,6000, 'product22')">BUY NOW</a>
+            </div>
+        </div>
+        <!--product 23 -->
+        <div class="card" id="product23">
+            <div class="image">
+                <img src="/static/image/nike/n3.png" alt="NIKE AF1 Coffe Brwon">
+            </div>
+            <div class="products_text">
+                <h2>NIKE AF1 Coffe Brown</h2>
+                <p>Price: Rs. <span class="productPrice">3500</span> <del>Rs. 6000</del> (42% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE AF1 Coffe Brwon', 4000 , 'https://www.instagram.com/p/CvdPSAlN-if/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' ,6000, 'product23')">BUY NOW</a>
+            </div>
+        </div>
+        <!--product 24-->
+        <div class="card" id="product24">
+            <div class="image">
+                <img src="/static/image/nike/n4.png" alt="NIKE AF1 Triple Black">
+            </div>
+            <div class="products_text">
+                <h2>NIKE AF1 Triple Black</h2>
+                <p>Price: Rs. <span class="productPrice">5500</span> <del>Rs. 9000</del> (39% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE AF1 Triple Black', 5500 , 'https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDUwMzgxNjAyNDc2MTE0?story_media_id=3170830118079158799_57523216083&igshid=ZjA4NGQ2NTI1Ng==' , 9000, 'product24')">BUY NOW</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Nike Products row 2 -->
+<div class="pr9">
+    <div class="products" id="n2">
+        <div class="box">
+            <!--product 25 -->
+            <div class="card" id="product25">
+                <div class="image">
+                    <img src="/static/image/nike/n5.png" alt="NIKE AF1 Black Swoosh">
+                </div>
+                <div class="products_text">
+                    <h2>NIKE AF1 Black Swoosh</h2>
+                    <p>Price: Rs. <span class="productPrice">5500</span> <del>Rs. 9000</del> (39% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE AF1 Black Swoosh', 5500 ,'https://www.instagram.com/p/CvdQDgMNnyn/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' ,9000, 'product25')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 26-->
+            <div class="card" id="product26">
+                <div class="image">
+                    <img src="/static/image/nike/n6.png" alt="NIKE AF1 Camel">
+                </div>
+                <div class="products_text">
+                    <h2>NIKE AF1 Camel</h2>
+                    <p>Price: Rs. <span class="productPrice">4300</span> <del>Rs. 8500</del> (49% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE AF1 Camel', 4300 , 'https://www.instagram.com/p/CvdPXnuNWwZ/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' ,8500, 'product26')">BUY NOW</a>
+                </div>
+
+            </div>
+            <!--product 27-->
+            <div class="card" id="product27">
+                <div class="image">
+                    <img src="/static/image/nike/n7.png" alt="NIKE AF1 Triple White">
+                </div>
+                <div class="products_text" id="product2">
+                    <h2>NIKE AF1 Triple White</h2>
+                    <p>Price: Rs. <span class="productPrice">4300</span> <del>Rs. 8500</del> (49% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE AF1 Triple White', 4300 , 'https://www.instagram.com/p/CvdQBGZNNiD/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 8500, 'product27')">BUY NOW</a>
+                </div>
+            </div>
+
+            <!--product 28 -->
+            <div class="card" id="product28">
+                <div class="image">
+                    <img src="/static/image/nike/n8.png" alt="NIKE AF1 CARPET Black">
+                </div>
+                <div class="products_text">
+                    <h2>NIKE AF1 TS Black</h2>
+                    <p>Price: Rs. <span class="productPrice">3500</span> <del>Rs. 5500</del> (36% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE AF1 CARPET Black', 3500 , 'https://www.instagram.com/p/CvcOQmeNOpu/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5500, 'product28')">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Nike Products row 3-->
+<div class="pr3">
+    <div class="products" id="n3">
+        <div class="box">
+            <!--product 29-->
+            <div class="card" id="product29">
+                <div class="image">
+                    <img src="/static/image/nike/n9.png" alt="NIKE AF1 CARPET Blue">
+                </div>
+                <div class="products_text">
+                    <h2>NIKE AF1 TS Blue</h2>
+                    <p>Price: Rs. <span class="productPrice">3500</span> <del>Rs. 5500</del> (36% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE AF1 CARPET Blue', 3500 ,'https://www.instagram.com/p/CvcOTnytdmM/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5500, 'product29')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 30 -->
+            <div class="card" id="product30">
+                <div class="image">
+                    <img src="/static/image/nike/n10.png" alt="NIKE AIR ZOOM Triple Black">
+                </div>
+                <div class="products_text">
+                    <h2>NIKE AIR ZOOM Triple Black</h2>
+                    <p>Price: Rs. <span class="productPrice">3500</span> <del>Rs. 5000</del> (30% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE AIR ZOOM Triple Black', 3500 , 'https://www.instagram.com/p/CvcMoyNtFE7/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5000, 'product30')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 31-->
+            <div class="card" id="product31">
+                <div class="image">
+                    <img src="/static/image/nike/n11.png" alt="NIKE AIR ZOOM Multi Black">
+                </div>
+                <div class="products_text">
+                    <h2>NIKE AIR ZOOM Multi White</h2>
+                    <p>Price: Rs. <span class="productPrice">3500</span> <del>Rs. 5000</del> (30% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE AIR ZOOM Multi White', 3500 , 'https://www.instagram.com/p/CvcMsoxtKKa/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5000, 'product31')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 32-->
+            <div class="card" id="product32">
+                <div class="image">
+                    <img src="/static/image/nike/n12.png" alt="NIKE BOLD Black">
+                </div>
+                <div class="products_text">
+                    <h2>NIKE BOLD Black</h2>
+                    <p>Price: Rs. <span class="productPrice">4300</span> <del>Rs. 5200</del> (17% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE BOLD Black', 4300 , 'https://www.instagram.com/p/CvcCGYstC3B/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5200 , 'product32')">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Nike Products row 4-->
+<div class="pr3">
+    <div class="products" id="n4">
+        <div class="box">
+            <!--product 37-->
+            <div class="card" id="product33">
+                <div class="image">
+                    <img src="/static/image/nike/n13.png" alt="NIKE BOLD Army Green">
+                </div>
+                <div class="products_text">
+                    <h2>NIKE BOLD Army Green</h2>
+                    <p>Price: Rs. <span class="productPrice">4300</span> <del>Rs. 5200</del> (17% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE BOLD Army Green', 4300 ,'https://www.instagram.com/p/CvcB_c4NU-i/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5200, 'product33')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 34 -->
+            <div class="card" id="product34">
+                <div class="image">
+                    <img src="/static/image/nike/n14.png" alt="NIKE BOLD Blue-White">
+                </div>
+                <div class="products_text">
+                    <h2>NIKE BOLD Blue-White</h2>
+                    <p>Price: Rs. <span class="productPrice">4300</span> <del>Rs. 5200</del> (17% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE BOLD Blue-White', 4300 , 'https://www.instagram.com/p/CvcBzdrNEx6/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5200, 'product34')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 35-->
+            <div class="card" id="product35">
+                <div class="image">
+                    <img src="/static/image/nike/n15.png" alt="AIR NIKE ZOOM Multi White">
+                </div>
+                <div class="products_text">
+                    <h2>AIR NIKE ZOOM Multi White</h2>
+                    <p>Price: Rs. <span class="productPrice">4300</span> <del>Rs. 5300</del> (18% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AIR NIKE ZOOM Multi White', 4300 , 'https://www.instagram.com/p/CvcKRxnNz7r/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5300, 'product35')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 36-->
+            <div class="card" id="product36">
+                <div class="image">
+                    <img src="/static/image/nike/n16.png" alt="AIR NIKE ZOOM Black-White">
+                </div>
+                <div class="products_text">
+                    <h2>AIR NIKE ZOOM Black-White</h2>
+                    <p>Price: Rs. <span class="productPrice">4300</span> <del>Rs. 5300</del> (18% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AIR NIKE ZOOM Black-White', 4300 , 'https://www.instagram.com/p/CvcKX7VNpJz/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5300 , 'product36')">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Nike Products row 5-->
+<div class="pr3">
+    <div class="products" id="n5">
+        <div class="box">
+            <!--product 37-->
+            <div class="card" id="product37">
+                <div class="image">
+                    <img src="/static/image/nike/n17.png" alt="AIR NIKE ZOOM Grey-White">
+                </div>
+                <div class="products_text">
+                    <h2>AIR NIKE ZOOM Grey-White</h2>
+                    <p>Price: Rs. <span class="productPrice">4300</span> <del>Rs. 5300</del> (18% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('AIR NIKE ZOOM Grey-White', 4300 ,'https://www.instagram.com/p/CvcMkubtLZl/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5300, 'product37')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 38 -->
+            <div class="card" id="product38">
+                <div class="image">
+                    <img src="/static/image/nike/n18.png" alt="NIKE FLYKNIT Triple Black">
+                </div>
+                <div class="products_text">
+                    <h2>NIKE FLYKNIT Triple Black</h2>
+                    <p>Price: Rs. <span class="productPrice">3500</span> <del>Rs. 5500</del> (36% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE FLYKNIT Triple Black', 3500 , 'https://www.instagram.com/p/CvHQlVaoXR0/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5500, 'product38')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 39-->
+            <div class="card" id="product39">
+                <div class="image">
+                    <img src="/static/image/nike/n19.png" alt="NIKE FLYKNIT Red-Black">
+                </div>
+                <div class="products_text">
+                    <h2>NIKE FLYKNIT Red-Black</h2>
+                    <p>Price: Rs. <span class="productPrice">3500</span> <del>Rs. 5500</del> (36% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE FLYKNIT Red-Black', 3500 , 'https://www.instagram.com/p/CvHQu6AIeJK/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5500, 'product39')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 40-->
+            <div class="card" id="product40">
+                <div class="image">
+                    <img src="/static/image/nike/n20.png" alt="NIKE FLYKNIT Orange-Blue">
+                </div>
+                <div class="products_text">
+                    <h2>NIKE FLYKNIT Orange-Blue</h2>
+                    <p>Price: Rs. <span class="productPrice">3500</span> <del>Rs. 5500</del> (36% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE FLYKNIT Orange-Blue', 3500 , 'https://www.instagram.com/p/CvHQ_NRIS4h/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5500 , 'product40')">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+<!--Yeezy Boost 350 v2-->
+<!-- Yeezy Boost 350 v2 row 1-->
+
+<div class="products" id="yeezy">
+    <h1><img src="/static/image/logos/yzy.png"></h1>
+    <div class="box">
+        <!--product 41 -->
+        <div class="card" id="product41">
+            <div class="image">
+                <img src="/static/image/350/y1.png" alt="YZY 350 All Black">
+            </div>
+            <div class="products_text">
+                <h2>YZY 350 All Black</h2>
+                <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 6500</del> (38% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('YZY 350 All Black', 4000 , 'https://www.instagram.com/p/CvakrpENGkC/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 6500, 'product41')">BUY NOW</a>
+            </div>
+        </div>
+        <!--Product 42 -->
+        <div class="card" id="product42">
+            <div class="image">
+                <img src="/static/image/350/y2.png" alt="YZY 350 Bone">
+            </div>
+            <div class="products_text" id="product42">
+                <h2>YZY 350 Bone</h2>
+                <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 6500</del> (38% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('YZY 350 Bone', 4000 , 'https://www.instagram.com/p/CvakpggtDPN/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' ,6500, 'product42')">BUY NOW</a>
+            </div>
+        </div>
+        <!--product 43 -->
+        <div class="card" id="product43">
+            <div class="image">
+                <img src="/static/image/350/y3.png" alt="YZY 350 Red Beast">
+            </div>
+            <div class="products_text">
+                <h2>YZY 350 Red Beast</h2>
+                <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 6500</del> (38% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('YZY 350 Red Beast', 4000 , 'https://www.instagram.com/p/CvbnuZaNMvC/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' ,6500, 'product43')">BUY NOW</a>
+            </div>
+        </div>
+        <!--product 44-->
+        <div class="card" id="product44">
+            <div class="image">
+                <img src="/static/image/350/y4.png" alt="YZY 350 Fade">
+            </div>
+            <div class="products_text">
+                <h2>YZY 350 Fade</h2>
+                <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 6500</del> (38% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('YZY 350 Fade', 4000 , 'https://www.instagram.com/p/CvamOnpNodC/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 6500, 'product44')">BUY NOW</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--350 Products row 2 -->
+<div class="pr7">
+    <div class="products" id="y2">
+        <div class="box">
+            <!--product 45 -->
+            <div class="card" id="product45">
+                <div class="image">
+                    <img src="/static/image/350/y5.png" alt="YZY 350 Mars">
+                </div>
+                <div class="products_text">
+                    <h2>YZY 350 Mars</h2>
+                    <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 6500</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('YZY 350 Mars', 4000 ,'https://www.instagram.com/p/CvbnqoztovY/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' ,6500, 'product45')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 46-->
+            <div class="card" id="product46">
+                <div class="image">
+                    <img src="/static/image/350/y6.png" alt="YZY 350 Rich Blue">
+                </div>
+                <div class="products_text">
+                    <h2>YZY 350 Rich Blue</h2>
+                    <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 6500</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('YZY 350 Rich Blue', 4000 , 'https://www.instagram.com/p/Cvakz-QtgYj/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' ,6500, 'product46')">BUY NOW</a>
+                </div>
+
+            </div>
+            <!--product 47-->
+            <div class="card" id="product47">
+                <div class="image">
+                    <img src="/static/image/350/y7.png" alt="YZY 350 Desert Sage">
+                </div>
+                <div class="products_text" id="product2">
+                    <h2>YZY 350 Desert Sage</h2>
+                    <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 6500</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('YZY 350 Desert Sage', 4000 , 'https://www.instagram.com/p/CvalXPxtWZm/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 6500, 'product47')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 48 -->
+            <div class="card" id="product48">
+                <div class="image">
+                    <img src="/static/image/350/y8.png" alt="YZY 350 Vanilla">
+                </div>
+                <div class="products_text">
+                    <h2>YZY 350 Vanilla</h2>
+                    <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 6500</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('YZY 350 Vanilla', 4000 , 'https://www.instagram.com/p/CvalonwN6Ov/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 6500, 'product48')">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--350 Products row 3 -->
+<div class="pr10">
+    <div class="products" id="y3">
+        <div class="box">
+            <!--product 49 -->
+            <div class="card" id="product49">
+                <div class="image">
+                    <img src="/static/image/350/y9.png" alt="YZY 350 Red Coal">
+                </div>
+                <div class="products_text">
+                    <h2>YZY 350 Red Coal</h2>
+                    <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 6500</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('YZY 350 Red Coal', 4000 ,'https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTY4MzY0MDY5NTYwMzEy?story_media_id=3170830335117518006_57523216083&igshid=ZjA4NGQ2NTI1Ng==' ,6500, 'product49')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 50-->
+            <div class="card" id="product50">
+                <div class="image">
+                    <img src="/static/image/350/y10.png" alt="YZY 350 Grey Desert">
+                </div>
+                <div class="products_text">
+                    <h2>YZY 350 Grey Desert</h2>
+                    <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 6500</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('YZY 350 Grey Desert', 4000 , 'https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTY4MzY0MDY5NTYwMzEy?story_media_id=3170830953550900250_57523216083&igshid=ZjA4NGQ2NTI1Ng==' ,6500, 'product50')">BUY NOW</a>
+                </div>
+
+            </div>
+            <!--product 51-->
+            <div class="card" id="product51">
+                <div class="image">
+                    <img src="/static/image/350/y11.png" alt="YZY 350 White Coal">
+                </div>
+                <div class="products_text" id="product2">
+                    <h2>YZY 350 Desert Sage</h2>
+                    <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 6500</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('YZY 350 White Coal', 4000 , 'https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTY4MzY0MDY5NTYwMzEy?story_media_id=3170830596665790803_57523216083&igshid=ZjA4NGQ2NTI1Ng==' , 6500, 'product51')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 52 -->
+            <div class="card" id="product52">
+                <div class="image">
+                    <img src="/static/image/350/y12.png" alt="YZY SPLY-350 Red Black">
+                </div>
+                <div class="products_text">
+                    <h2>YZY SPLY-350 Red Black</h2>
+                    <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 6500</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('YZY SPLY-350 Red Black', 4000 , 'https://www.instagram.com/devox.pk/' , 6500, 'product52')">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+ <!--New Arrivals-->
+<!-- New Arrivals row 1-->
+
+<div class="products" id="newarr">
+    <h1><img src="/static/image/logos/newarr.png"></h1>
+    <div class="newarrall">
+    <div class="box">
+        <!--product 53 -->
+        <div class="card" id="product53">
+            <div class="image">
+                <img src="/static/image/newarrivals/a1.png" alt="UB Vivid">
+            </div>
+            <div class="products_text">
+                <h2>UB Vivid</h2>
+                <p>Price: Rs. <span class="productPrice">4500</span> <del>Rs. 6000</del> (25% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('UB Vivid', 4500 , 'https://www.instagram.com/p/Cvb3JjGt8FQ/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 6000, 'product53')">BUY NOW</a>
+            </div>
+        </div>
+        <!--Product 54 -->
+        <div class="card" id="product54">
+            <div class="image">
+                <img src="/static/image/newarrivals/a2.png" alt="UB Core Black">
+            </div>
+            <div class="products_text" id="product50">
+                <h2>UB Core Black</h2>
+                <p>Price: Rs. <span class="productPrice">4500</span> <del>Rs. 6000</del> (25% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('UB Core Black', 4500 , 'https://www.instagram.com/p/Cvb3TThNwf8/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' ,6000, 'product54')">BUY NOW</a>
+            </div>
+        </div>
+        <!--product 55 -->
+        <div class="card" id="product55">
+            <div class="image">
+                <img src="/static/image/newarrivals/a3.png" alt="UB Black-White">
+            </div>
+            <div class="products_text">
+                <h2>UB Black-White</h2>
+                <p>Price: Rs. <span class="productPrice">4500</span> <del>Rs. 6000</del> (25% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('UB Black-White', 4500 , 'https://www.instagram.com/p/Cvb3Nq_Nn96/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' ,6000, 'product55')">BUY NOW</a>
+            </div>
+        </div>
+        <!--product 56-->
+        <div class="card" id="product56">
+            <div class="image">
+                <img src="/static/image/newarrivals/a4.png" alt="UB Multi White">
+            </div>
+            <div class="products_text">
+                <h2>UB Multi White</h2>
+                <p>Price: Rs. <span class="productPrice">4500</span> <del>Rs. 6000</del> (25% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('UB Multi White', 4500 , 'https://www.instagram.com/p/Cvb3XRPNeHx/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 6000, 'product56')">BUY NOW</a>
+            </div>
+        </div>
+          <!--product 57-->
+          <div class="card" id="product57">
+            <div class="image">
+                <img src="/static/image/newarrivals/a5.png" alt="UG All Black">
+            </div>
+            <div class="products_text">
+                <h2>UG All Black</h2>
+                <p>Price: Rs. <span class="productPrice">4200</span> <del>Rs. 6500</del> (35% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('UG All Black', 4200 , 'https://www.instagram.com/p/CvbrMebtokX/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 6500, 'product57')">BUY NOW</a>
+            </div>
+        </div>
+    
+<!--New Arrivals row 2 -->
+
+            <!--product 58 -->
+            <div class="card" id="product58">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a6.png" alt="UG Black-White">
+                </div>
+                <div class="products_text">
+                    <h2>UG Black-White</h2>
+                    <p>Price: Rs. <span class="productPrice">4200</span> <del>Rs. 6500</del> (35% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('UG Black-White', 4200 ,'https://www.instagram.com/p/CvbrKHktaQ9/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' ,6500, 'product58')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 59-->
+            <div class="card" id="product59">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a7.png" alt="UG Navy">
+                </div>
+                <div class="products_text">
+                    <h2>UG Navy</h2>
+                    <p>Price: Rs. <span class="productPrice">4200</span> <del>Rs. 6500</del> (35% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('UG Navy', 4200 , 'https://www.instagram.com/p/Cvbq9DFNDfA/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' ,6500, 'product59')">BUY NOW</a>
+                </div>
+
+            </div>
+            <!--product 60-->
+            <div class="card" id="product60">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a8.png" alt="YZY 450 Dark Slate">
+                </div>
+                <div class="products_text" id="product2">
+                    <h2>YZY 450 Dark Slate</h2>
+                    <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 5800</del> (31% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('YZY 450 Dark Slate', 4000 , 'https://www.instagram.com/p/Cvbq2P6tN9p/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5800, 'product60')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 61 -->
+            <div class="card" id="product61">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a9.png" alt="YZY 450 Cloud White">
+                </div>
+                <div class="products_text">
+                    <h2>YZY 450 Cloud White</h2>
+                    <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 5800</del> (31% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('YZY 450 Cloud White', 4000 , 'https://www.instagram.com/p/CvbqpFkNwAI/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5800, 'product61')">BUY NOW</a>
+                </div>
+            </div>
+              <!--product 62-->
+        <div class="card" id="product62">
+            <div class="image">
+                <img src="/static/image/newarrivals/a10.png" alt="YZY 450 Stone Flax">
+            </div>
+            <div class="products_text">
+                <h2>YZY 450 Stone Flax</h2>
+                <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 5800</del> (31% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('YZY 450 Stone Flax', 4000 , 'https://www.instagram.com/p/CvbqnaqtOQF/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5800, 'product62')">BUY NOW</a>
+            </div>
+        </div>
+      
+<!--New Arrivals row 3-->
+
+            <!--product 63-->
+            <div class="card" id="product63">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a11.png" alt="Foam-Runner Black">
+                </div>
+                <div class="products_text">
+                    <h2>Foam-Runner Black</h2>
+                    <p>Price: Rs. <span class="productPrice">2000</span> <del>Rs. 3200</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('Foam-Runner Black', 2000 ,'https://www.instagram.com/p/CvbqYl7NgPw/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 3200, 'product63')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 64 -->
+            <div class="card" id="product64">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a12.png" alt="Foam-Runner Dark Blue">
+                </div>
+                <div class="products_text">
+                    <h2>Foam-Runner Dark Blue</h2>
+                    <p>Price: Rs. <span class="productPrice">2000</span> <del>Rs. 3200</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('Foam-Runner Dark Blue', 2000 , 'https://www.instagram.com/p/CvbovyxNu8x/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 3200, 'product64')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 65-->
+            <div class="card" id="product65">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a13.png" alt="Foam-Runner Skin">
+                </div>
+                <div class="products_text">
+                    <h2>Foam-Runner Skin</h2>
+                    <p>Price: Rs. <span class="productPrice">2000</span> <del>Rs. 3200</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('Foam-Runner Skin', 2000 , 'https://www.instagram.com/p/Cvbo4m1NHOO/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 3200, 'product65')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 66-->
+            <div class="card" id="product66">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a14.png" alt="Foam-Runner Silver">
+                </div>
+                <div class="products_text">
+                    <h2>Foam-Runner Silver</h2>
+                    <p>Price: Rs. <span class="productPrice">2000</span> <del>Rs. 3200</del> (38% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('Foam-Runner Silver', 2000 , 'https://www.instagram.com/devox.pk/' , 3200 , 'product66')">BUY NOW</a>
+                </div>
+            </div>
+              <!--product 67-->
+        <div class="card" id="product67">
+            <div class="image">
+                <img src="/static/image/newarrivals/a15.png" alt="NIKE AM 720 Red Toe">
+            </div>
+            <div class="products_text">
+                <h2>NIKE AM 720 Red Toe</h2>
+                <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 5200</del> (23% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('NIKE AM 720 Red Toe', 4000 , 'https://www.instagram.com/p/CvahZ5PN5bU/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5200, 'product67')">BUY NOW</a>
+            </div>
+        </div>
+     
+<!--New Arrivals row 4-->
+
+            <!--product 68-->
+            <div class="card" id="product68">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a16.png" alt="MAISON 700 Black">
+                </div>
+                <div class="products_text">
+                    <h2>MAISON 700 Black</h2>
+                    <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 5400</del> (26% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('MAISON 700 Black', 4000 ,'https://www.instagram.com/p/CvagVFqtCNC/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5400, 'product68')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 69 -->
+            <div class="card" id="product69">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a17.png" alt="MAISON 700 Skin">
+                </div>
+                <div class="products_text">
+                    <h2>MAISON 700 Skin</h2>
+                    <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 5400</del> (26% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('MAISON 700 Skin', 4000 , 'https://www.instagram.com/p/Cvage3-tKnC/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5400, 'product69')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 70-->
+            <div class="card" id="product70">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a18.png" alt="F-lll ABCDEF Triple Black">
+                </div>
+                <div class="products_text">
+                    <h2>F-lll ABCDEF Triple Black</h2>
+                    <p>Price: Rs. <span class="productPrice">4500</span> <del>Rs. 6200</del> (27% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('F-lll ABCDEF Triple Black', 4500 , 'https://www.instagram.com/p/CvIBYLoycoT/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' ,6200, 'product70')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 71-->
+            <div class="card" id="product71">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a19.png" alt="F-lll ABCDEF Off-White">
+                </div>
+                <div class="products_text">
+                    <h2>F-lll ABCDEF Off-White</h2>
+                    <p>Price: Rs. <span class="productPrice">4500</span> <del>Rs. 6200</del> (27% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('F-lll ABCDEF Off-White', 4500 , 'https://www.instagram.com/p/CvIBfxASFBn/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 6200 , 'product71')">BUY NOW</a>
+                </div>
+            </div>
+              <!--product 72-->
+        <div class="card" id="product72">
+            <div class="image">
+                <img src="/static/image/newarrivals/a20.png" alt="F-lll ABCDEF White">
+            </div>
+            <div class="products_text">
+                <h2>F-lll ABCDEF White</h2>
+                <p>Price: Rs. <span class="productPrice">4500</span> <del>Rs. 6200</del> (27% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('F-lll ABCDEF White', 4500 , 'https://www.instagram.com/p/CvIBosrSytt/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 6200, 'product72')">BUY NOW</a>
+            </div>
+        </div>
+    
+<!--New Arrivalss row 5-->
+            <!--product73-->
+            <div class="card" id="product73">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a21.png" alt="LS Red Leminate">
+                </div>
+                <div class="products_text">
+                    <h2>LS Red Leminate</h2>
+                    <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 6800</del> (41% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('LS Red Leminate', 4000 ,'https://www.instagram.com/p/Cv2VwCwNqsh/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 6800, 'product73')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 74 -->
+            <div class="card" id="product74">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a22.png" alt="LS Blue Grey Yellow Strike">
+                </div>
+                <div class="products_text">
+                    <h2>LS Blue Grey Yellow Strike</h2>
+                    <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 6800</del> (41% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('LS Blue Grey Yellow Strike', 4000 , 'https://www.instagram.com/p/Cv2VpadtLYM/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 6800, 'product74')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 75-->
+            <div class="card" id="product75">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a23.png" alt="LS Shadow Yellow">
+                </div>
+                <div class="products_text">
+                    <h2>LS Shadow Yellow</h2>
+                    <p>Price: Rs. <span class="productPrice">4000</span> <del>Rs. 6800</del> (41% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('LS Shadow Yellow', 4000 , 'https://www.instagram.com/p/Cv2VkJ5texv/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 6800, 'product75')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 76-->
+            <div class="card" id="product76">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a24.png" alt="LR Dark Green">
+                </div>
+                <div class="products_text">
+                    <h2>LR Dark Green</h2>
+                    <p>Price: Rs. <span class="productPrice">3000</span> <del>Rs. 5500</del> (45% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('LR Dark Green', 3000 , 'https://www.instagram.com/p/CvdM5R2NXJh/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5500 , 'product76')">BUY NOW</a>
+                </div>
+            </div>
+              <!--product 77-->
+        <div class="card" id="product77">
+            <div class="image">
+                <img src="/static/image/newarrivals/a25.png" alt="LR Light Green">
+            </div>
+            <div class="products_text">
+                <h2>LR Light Green</h2>
+                <p>Price: Rs. <span class="productPrice">3000</span> <del>Rs. 5500</del> (45% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('LR Light Green', 3000 , 'https://www.instagram.com/p/CvdM3bqt8PG/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5500, 'product77')">BUY NOW</a>
+            </div>
+        </div>
+    
+<!--New Arrivalss row 6-->
+
+            <!--product 78-->
+            <div class="card" id="product78">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a26.png" alt="LR Rainbow">
+                </div>
+                <div class="products_text">
+                    <h2>LR Rainbow</h2>
+                    <p>Price: Rs. <span class="productPrice">4300</span> <del>Rs. 6200</del> (31% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('LR Rainbow', 4300 ,'https://www.instagram.com/p/CvdM-GYN-NP/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 6200, 'product78')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 79 -->
+            <div class="card" id="product79">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a27.png" alt="OFF-WH Titan">
+                </div>
+                <div class="products_text">
+                    <h2>OFF-WH Titan</h2>
+                    <p>Price: Rs. <span class="productPrice">3200</span> <del>Rs. 5500</del> (42% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('OFF-WH Titan', 3200 , 'https://www.instagram.com/p/CvbxTeGtShj/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5500, 'product79')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 80-->
+            <div class="card" id="product80">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a28.png" alt="OFF-WH Mid Black White">
+                </div>
+                <div class="products_text">
+                    <h2>OFF-WH Mid Black White</h2>
+                    <p>Price: Rs. <span class="productPrice">3200</span> <del>Rs. 5500</del> (42% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('OFF-WH Mid Black White', 3200 , 'https://www.instagram.com/p/CvbxcRztJf7/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5500, 'product80')">BUY NOW</a>
+                </div>
+            </div>
+            <!--product 81-->
+            <div class="card" id="product81">
+                <div class="image">
+                    <img src="/static/image/newarrivals/a29.png" alt="OFF-WH Blue Tag">
+                </div>
+                <div class="products_text">
+                    <h2>OFF-WH Blue Tag</h2>
+                    <p>Price: Rs. <span class="productPrice">3200</span> <del>Rs. 5500</del> (42% off)</p>
+                    <a href="javascript:void(0);" class="btn" onclick="selectProduct('OFF-WH Blue Tag', 3200 , 'https://www.instagram.com/p/CvbxLZSN_lg/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5500 , 'product81')">BUY NOW</a>
+                </div>
+            </div>
+              <!--product 82-->
+        <div class="card" id="product82">
+            <div class="image">
+                <img src="/static/image/newarrivals/a30.png" alt="OFF-WH All White">
+            </div>
+            <div class="products_text">
+                <h2>OFF-WH All White</h2>
+                <p>Price: Rs. <span class="productPrice">3200</span> <del>Rs. 5500</del> (42% off)</p>
+                <a href="javascript:void(0);" class="btn" onclick="selectProduct('OFF-WH All White', 3200 , 'https://www.instagram.com/p/CvbxHStNete/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==' , 5500, 'product82')">BUY NOW</a>
+            </div>
+        </div> 
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+    <!--form-->
+
+   <div id="productSelection">
+    <button onclick="closeForm()" style="float: right;">&#x2715;</button>
+    <h2 id="selectedProduct">Product Name</h2>
+    <p>Price: Rs. <span id="productPrice">0.00</span> <del id="selectedCuttedPrice">Rs. </del></p>
+    <div class="discount">
+        <p><span id="discountPercentage">0%</span> off</p>
+    </div>
+        <div class="product_info">
+            <img src="" alt="Product Image">
+            <p id="selectedProductName">Product Name</p>
+<div class="quantity-size-container">
+            <div class="quantity" id="quantitySection">
+                <h3>Quantity:</h3>
+                <button onclick="decrementQuantity()">-</button>
+                <input type="number" id="quantity" name="Quantity" value="1" min="1" disabled>
+                <button onclick="incrementQuantity()">+</button>
+            </div>
+            <div class="quantity" id="size">
+                <h3>Size:</h3>
+                <button onclick="incrementSize()">-</button>
+                <input type="number" id="productSize" name="Size" value="1" min="1" disabled>
+                <button onclick="decrementSize()">+</button>
+            </div>
+            </div>
+        </div>
+        <a href="#" id="moreImagesLink" target="_blank"><h3>More Images</h3></a> <!-- Placeholder link for more images -->
+       
+        
+        
+    
+        <div class="order-form-container">
+           
+            <form action="https://formsubmit.co/devoxpk@gmail.com" method="POST">
+                <input type="hidden" id="customerId" name="Customer ID" value="">
+                <input type="hidden" id="productID" name="Product ID" value="">
+                <input type="hidden" id="selectedProductNameInput" name="Selected Product Name" value="">
+                <label class="cstmname" for="customerName">Name:</label>
+                <input type="text" id="customerName" name="Customer Name" placeholder="Enter your name" required>
+        
+                <label class="usrcity" for="userCity">City:</label>
+                <input type="text" id="userCity" name="City" placeholder="Enter your city" required><br>
+        
+                <label class="address" for="userAddress">Address:</label>
+                <input type="text" id="userAddress" name="Home Address" placeholder="Enter your home address" required>
+        
+                <label class="contactno" for="userContact">Contact Number:</label>
+                <input type="text" id="userContact" name="Contact Number" placeholder="Enter your contact" required><br>
+        
+                <label class="email" for="userEmail">Email:</label>
+                <input type="email" id="userEmail" name="Email" placeholder="Enter your mail(optional)">
+             
+                <!-- New input for additional details -->
+                <label class="detail" for="additionalDetails">Detail:</label>
+                <textarea id="additionalDetails" name="Details" placeholder="Enter any additional details here(optional)"></textarea><br>
+                <input type="hidden" id="selectedSize" name="Selected Size" value="1">
+                <input type="hidden" id="selectedQuantity" name="Selected Quantity" value="1">
+                <input type="hidden" name="_next" value="http://localhost:5500/templates/thanks.html">
+                <button id="submitButton" type="submit" onclick="submitOrder();">Submit Order</button>
+                <div class="confirmation" id="orderConfirmation">
+                    <span class="tick">✓</span>Your order has been placed!<br><span class="captcha">Please fill the captcha to confirm your order</span>
+                    <a id="downloadLink" href="#" style="display: none;"></a>
+                </div>
+            </form>
+            <canvas id="receiptCanvas" style="display: none;"></canvas>
+        </div>
+   </div>
+<!--footer-->
+   <footer>
+    <div class="red-line"></div>
+    <p>&copy; All Rights Reserved by Devox 2023</p>
+  </footer>
+
+    <script>
+/*smtp*/
+
+
+
+        // Function to get the next customer number for sequencing
+        function getNextCustomerNumber() {
+            let currentNumber = localStorage.getItem("customerNumber");
+            if (!currentNumber) {
+                currentNumber = 1;
+            } else {
+                currentNumber = parseInt(currentNumber);
+                currentNumber++;
+            }
+            localStorage.setItem("customerNumber", currentNumber);
+            return currentNumber;
+        }
+
+            // Function to handle product selection and set "More Images" link
+     // Function to handle product selection and set "More Images" link
+     function selectProduct(productName, productPrice, moreImagesLink, ctall, productID) {
+    const productImage = document.querySelector(`[alt="${productName}"]`);
+    const selectedProductNameInput = document.getElementById("selectedProductNameInput"); // Get the hidden input element
+    clearandResetFormData();
+    // Update the selected product name in the hidden input
+    selectedProductNameInput.value = productName;
+
+    document.getElementById("selectedProduct").innerText = productName;
+    document.getElementById("productPrice").innerText = productPrice;
+    document.getElementById("productSelection").style.display = "block";
+
+    // Set product image and name in the form
+    document.getElementById("selectedProductName").innerText = productName;
+    productImage && (document.getElementById("productSelection").querySelector("img").src = productImage.src);
+
+    // Calculate discount percentage and discounted price
+    const discountPercentage = ((ctall - productPrice) / ctall) * 100;
+    document.getElementById("discountPercentage").innerText = discountPercentage.toFixed(0) + "%";
+    document.getElementById("moreImagesLink").href = moreImagesLink;
+    document.getElementById("selectedCuttedPrice").innerText = ctall;
+// sumbit button display 
+const submitButton = document.getElementById("submitButton");
+submitButton.style.display = "block";
+    // Scroll to the top of the form
+    const formElement = document.getElementById("productSelection");
+    formElement.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    // Set the product name and ID in the form
+    document.getElementById("selectedProductName").innerText = productName;
+    document.getElementById("productID").value = productID;
+    selectedProductID = productID;
+
+    selectedProductNameInput.value = productName;
+
+selectedProductName = productName;
+}
+/*clear and reset form data */
+function clearandResetFormData() {
+    document.getElementById("customerName").value = "";
+    document.getElementById("userEmail").value = "";
+    document.getElementById("userCity").value = "";
+    document.getElementById("userAddress").value = "";
+    document.getElementById("userContact").value = "";
+    document.getElementById("additionalDetails").value = "";
+    document.getElementById("productSize").value = 1;
+    document.getElementById("quantity").value = 1;
+}
+
+/*increment/decrement*/
+
+    let originalProductPrice;
+
+function incrementQuantity() {
+    const quantityInput = document.getElementById("quantity");
+    const currentQuantity = parseInt(quantityInput.value);
+    const maxQuantity = 50; // Set the maximum quantity allowed
+    if (currentQuantity < maxQuantity) {
+        quantityInput.value = currentQuantity + 1;
+        updateTotalPrice();
+    updateSelectedQuantity();
+    }
+}
+
+function decrementQuantity() {
+    const quantityInput = document.getElementById("quantity");
+    const currentQuantity = parseInt(quantityInput.value);
+    if (currentQuantity > 1) {
+        quantityInput.value = currentQuantity - 1;
+        updateTotalPrice();
+    updateSelectedQuantity();
+    }
+}
+function updateSelectedSize() {
+    const selectedSize = document.getElementById("productSize").value;
+    document.getElementById("selectedSize").value = selectedSize;
+}
+
+function updateSelectedQuantity() {
+    const selectedQuantity = document.getElementById("quantity").value;
+    document.getElementById("selectedQuantity").value = selectedQuantity;
+}
+
+function updateTotalPrice() {
+    // Get the original product price if it's not already set
+    if (!originalProductPrice) {
+        originalProductPrice = parseFloat(document.getElementById("productPrice").innerText);
+    }
+
+    const quantity = parseInt(document.getElementById("quantity").value);
+    const totalPrice = originalProductPrice * quantity;
+    document.getElementById("productPrice").innerText = totalPrice.toFixed(2);
+}
+
+function generateCustomerId() {
+            const customerId = Math.floor(100000 + Math.random() * 900000); // Generate a 6-digit customer ID
+            return customerId;
+        }
+
+        function submitOrder() {
+    const customerNameInput = document.getElementById("customerName");
+    const userCityInput = document.getElementById("userCity");
+    const userAddressInput = document.getElementById("userAddress");
+    const userContactInput = document.getElementById("userContact");
+    const selectedSizeInput = document.getElementById("productSize");
+
+    const customerName = customerNameInput.value;
+    const userCity = userCityInput.value;
+    const userAddress = userAddressInput.value;
+    const userContact = userContactInput.value;
+    const selectedSize = parseInt(selectedSizeInput.value);
+
+    // Check if required fields are filled out
+    if (!customerName || !userCity || !userAddress || !userContact ) {
+       // alert("Please fill out all required fields and select a valid size.");
+        return false; // Prevent form submission
+    }else if(selectedSize === 1){
+        alert("Please select a size")
+        return false;
+    }
+
+    const customerIdInput = document.getElementById("customerId");
+    const confirmationDiv = document.getElementById("orderConfirmation");
+    const downloadLink = document.getElementById("downloadLink");
+    const submitButton = document.getElementById("submitButton");
+    
+    // Hide the submit button and show the confirmation
+    submitButton.style.display = "none";
+    confirmationDiv.style.display = "block";
+
+    // Generate a customer ID and set it in the hidden input
+    const customerId = generateCustomerId();
+    customerIdInput.value = customerId;
+
+    generateReceiptTextImage(customerId);
+
+    // Display the confirmation message
+    confirmationDiv.style.display = "block";
+
+    // Generate and initiate the receipt download
+    const receiptText = generateReceiptText(customerId); // Implement this function to generate receipt content
+    const blob = new Blob([receiptText], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    downloadLink.href = url;
+    downloadLink.download = "order_receipt.txt";
+    
+    // Automatically trigger the download
+    downloadLink.click();
+}
+function generateReceiptTextImage(customerId) {
+
+    
+    const canvas = document.getElementById("receiptCanvas");
+    const context = canvas.getContext("2d");
+    const customerNameInput = document.getElementById("customerName");
+
+    const customerName = customerNameInput.value;
+
+    // Set canvas dimensions
+    const canvasWidth = 800;
+    const canvasHeight = 600;
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
+
+    // Set background color
+    context.fillStyle = "black"; // Change the background color to black
+    context.fillRect(0, 0, canvasWidth, canvasHeight);
+
+    // Load Devox logo image
+    const logo = new Image();
+    logo.src = "/static/image/devoxlog.png"; // Make sure to have this image in the same directory
+
+    logo.onload = function () {
+        // Draw the logo with adjusted dimensions
+        const logoHeight = 100; // Set the desired logo height
+        const logoWidth = (logo.width / logo.height) * logoHeight; // Maintain aspect ratio
+        context.drawImage(logo, (canvasWidth - logoWidth) / 2, 50, logoWidth, logoHeight);
+
+        // Add your message below the logo
+        context.fillStyle = "white"; // Set text color to white
+        context.font = "16px Arial";
+        const message = `Thank you, ${customerName}, for selecting Devox as your choice for purchasing your ${selectedProductName}. -Devox`;
+        const textWidth = context.measureText(message).width;
+        context.fillText(message, (canvasWidth - textWidth) / 2, 180);
+
+
+    
+
+        // ... (rest of your canvas drawing code)
+
+        // Convert canvas to data URL
+        const dataURL = canvas.toDataURL("image/png");
+
+        // Create a link to trigger the download
+        const downloadLink = document.createElement("a");
+        downloadLink.href = dataURL;
+        downloadLink.download = "receipt.png";
+
+        // Simulate a click on the link to trigger the download
+        downloadLink.click();
+    };
+}
+
+
+function generateReceiptText(customerId) {
+    const customerName = document.getElementById("customerName").value;
+    const userEmail = document.getElementById("userEmail").value || "Not Given";
+    const userCity = document.getElementById("userCity").value;
+    const userAddress = document.getElementById("userAddress").value;
+    const userContact = document.getElementById("userContact").value;
+    const selectedSize = document.getElementById("selectedSize").value;
+    const selectedQuantity = document.getElementById("selectedQuantity").value;
+    const productPrice = parseFloat(document.getElementById("productPrice").innerText);
+    const deliveryCharges = 0; // Assuming the delivery charges are fixed
+
+    const totalPrice = productPrice + deliveryCharges;
+
+    const receipt = `
+        Customer ID: ${customerId}
+        Customer Name: ${customerName}
+        Email: ${userEmail}
+        City: ${userCity}
+        Home Address: ${userAddress}
+        Contact Number: ${userContact}
+        Selected Size: ${selectedSize}
+        Selected Quantity: ${selectedQuantity}
+        Product ID: ${selectedProductID}
+        Product Name: ${selectedProductName}
+        Delivery Charges : ${deliveryCharges}
+        ________________________________________
+        Grand Total: Rs. ${totalPrice.toFixed(2)}
+        ________________________________________
+
+
+         Thank you, ${customerName}, for placing your order with us. Your grand total comes to Rs. ${totalPrice.toFixed(2)}.
+         We hope that you'll consider shopping with Devox again in the future.
+         Our dedicated team will be reaching out to you shortly.
+         Please feel free to stay connected with us for updates and more.
+    `;
+
+    return receipt;
+}
+
+
+//Increment and decrement size functions 
+
+function decrementSize() {
+        var productSizeInput = document.getElementById("productSize");
+        var currentSize = parseInt(productSizeInput.value);
+        productSizeInput.value = currentSize + 1;
+        updateSelectedSize();
+
+    }
+
+    // Function to decrement the size quantity
+    function incrementSize() {
+        var productSizeInput = document.getElementById("productSize");
+        var currentSize = parseInt(productSizeInput.value);
+        if (currentSize > 1) {
+            productSizeInput.value = currentSize - 1;
+            updateSelectedSize();
+        }
+    }
+
+    //closing the form
+
+    function closeForm() {
+    // Clear the form fields
+    document.getElementById("productSelection").style.display = "none";
+    document.getElementById("selectedProduct").innerText = "";
+    document.getElementById("productPrice").innerText = "";
+    document.getElementById("discountPercentage").innerText = "";
+    document.getElementById("moreImagesLink").href = "";
+    document.getElementById("selectedCuttedPrice").innerText = "";
+    document.getElementById("customerName").value = "";
+    document.getElementById("userEmail").value = "";
+    document.getElementById("userCity").value = "";
+    document.getElementById("userAddress").value = "";
+    document.getElementById("userContact").value = "";
+    document.getElementById("additionalDetails").value = "";
+    document.getElementById("productSize").value = 1;
+
+    // Reset the quantity to 1
+    document.getElementById("quantity").value = 1;
+    document.getElementById("orderConfirmation").style.display = "none";
+
+    // Scroll to the top of the form
+    const formElement = document.getElementById("productSelection");
+    formElement.scrollIntoView({ behavior: "smooth", block: "start" });
+
+   // const selectedProductID = "product" + (productIndex + 1); // Assume you have a variable called productIndex for tracking the selected product
+    const productCard = document.getElementById(selectedProductID);
+    if (productCard) {
+        productCard.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    // Clear the selectedProductID after using it
+    selectedProductID = null;
+}
+
+/*sidebar*/
+document.addEventListener("DOMContentLoaded", function () {
+  const sidebar = document.querySelector(".sidebar");
+  const menuIcon = document.querySelector(".menu-icon");
+  const closeIcon = document.querySelector(".close-icon");
+
+  let hasInteracted = false; // Flag to track user interaction
+
+  // Open sidebar when menu icon is clicked
+  menuIcon.addEventListener("click", function () {
+    sidebar.style.left = "calc(100% - 250px)"; // Open from the right
+    hasInteracted = true; // Set the flag when user interacts
+  });
+
+  // Close sidebar when close icon is clicked
+  closeIcon.addEventListener("click", function () {
+    sidebar.style.left = "100%"; // Close to the right
+  });
+
+  // Close sidebar when clicking anywhere outside of it
+  document.addEventListener("click", function (event) {
+    const target = event.target;
+    if (hasInteracted && !sidebar.contains(target) && !menuIcon.contains(target)) {
+      sidebar.style.left = "100%"; // Close the sidebar
+    }
+  });
+});
+
+
+
+</script>
+
+</body>
+
+</html>
